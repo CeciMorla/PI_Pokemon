@@ -1,5 +1,5 @@
 const { Router } = require('express');
-const {allPokemon,allPokemonId,pokemonName} = require('../controllers/controllers');
+const {allPokemon,allPokemonId} = require('../controllers/controllers');
 const {Pokemon,Type}  = require('../db.js');
 const router = Router();
 
@@ -8,7 +8,12 @@ router.get('/', async(req,res)=>{
     try {
         let infoPokemons = await allPokemon();
     if(name){
-        res.json(pokemonName(name));
+        let pokemonName = await infoPokemons.filter(e => e.name.toLowerCase().includes(name.toLowerCase()));
+        if(pokemonName){
+            res.send(pokemonName)
+        }else{
+            res.status(404).send('Error');
+        }
     }else{
         res.json(infoPokemons);
     }
