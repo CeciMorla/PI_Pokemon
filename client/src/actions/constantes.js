@@ -1,0 +1,8 @@
+export const GET_BY_NAME = 'GET_BY_NAME';
+export const GET_ALL_POKEMON = 'GET_ALL_POKEMON';
+export const FILTER_BY_TYPE = 'FILTER_BY_TYPE';
+export const FILTER_BY_CREATED = 'FILTER_BY_CREATED';
+export const ORDER_ALFABETIC = 'ORDER_ALFABETIC';
+export const ORDER_BY_FORCE = 'ORDER_BY_FORCE';
+export const CREATE_POKEMON = 'CREATE_POKEMON';
+
