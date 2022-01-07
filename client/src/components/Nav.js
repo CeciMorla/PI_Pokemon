@@ -9,32 +9,30 @@ const Nav = ({types}) =>{
             <Link to='/create'>
                 <button>Crear Pokemon</button>
             </Link>
-            <div>
-                <select>
-                    <option value='a-z'>A-Z</option>
-                    <option value='z-a'>Z-A</option>
-                    <option value='force+'>Fuerza +</option>
-                    <option value='force-'>Fuerza -</option>
-                </select>
-                <select>
-                    <option value='all'>Todos</option>
-                    <option value='exist'>Existente</option>
-                    <option value='created'>Creado</option>
-                </select>
-                <select>
-                    <option value='all'>Tipos</option>
-                    {
-                        types?.map(type=>{
-                            return (
-                                <option 
-                                key={type.name}
-                                value={`${type.name}`}>
-                                </option>
-                            );
-                        })
-                    }
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         </select>
-            </div>
+            <select>
+                <option value='asc'>A-Z</option>
+                <option value='des'>Z-A</option>
+                <option value='force+'>Mayor Fuerza</option>
+                <option value='force-'>Menor Fuerza</option>
+            </select>
+            <select>
+                <option value='all'>Todos</option>
+                <option value='created'>Creados</option>
+                <option value='exist'>Existente</option>
+            </select>
+            <select>
+                <option value='allTypes'>Tipos</option>
+                {
+                    types?.map(t=>{
+                        return (
+                            <option value={t.name} key={t.name}>
+                                {t.name}
+                            </option>
+                        )
+                    })
+                }
+                    
+            </select>
             <SearchBar/>
         </div>
     );

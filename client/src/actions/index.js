@@ -7,7 +7,7 @@ import {ORDER_ALFABETIC} from './constantes';
 import {ORDER_BY_FORCE} from './constantes';
 import {CREATE_POKEMON} from './constantes';
 
-//trae todos los pokemons
+
 
 export const getAllPokemons =() => {
     return function (dispatch) {
@@ -15,7 +15,8 @@ export const getAllPokemons =() => {
                 .then(response => response.json())
                 .then((json)=>{
                     dispatch({type: GET_ALL_POKEMON, payload: json });
-                });
+                })
+                .catch((error)=>{console.log(error)});
     }
 }
 
@@ -25,7 +26,8 @@ export const getPokemonByName = (name) =>{
                 .then(response => response.json())
                 .then((json)=>{
                     dispatch({type: GET_BY_NAME, payload: json });
-                });
+                })
+                .catch((error)=>{console.log(error)});
     }
 }
 
@@ -35,6 +37,7 @@ export const getType = ()=>{
                 .then(response => response.json())
                 .then((json)=>{
                     dispatch({type:GET_TYPE, payload: json});
-                });
+                })
+                .catch((error) => {console.group(error)})
     }
 }

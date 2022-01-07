@@ -11,16 +11,21 @@ const SearchBar = ()=>{
         setPokemon(e.target.value);
     }
 
+    let handlerSubmit=(e)=>{
+        e.preventDefault(e)
+        dispatch(getPokemonByName(pokemon))
+        setPokemon('')
+    }
     return(
         <div>
-            <form>
+            <form onSubmit={(e)=> handlerSubmit(e)}>
                 <input 
                 type='text' 
                 placeholder='Pokemon...'
-                onChange={changeInput}
+                onChange={(e)=> changeInput(e)}
                 value={pokemon}
                 />
-                <button onClick={()=>dispatch(getPokemonByName(pokemon))}>Buscar</button>
+                <button type='submit'>Buscar</button>
             </form>
         </div>
     )
