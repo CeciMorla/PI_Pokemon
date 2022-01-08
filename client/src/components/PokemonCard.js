@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const PokemonCard = ({id,name,img,types})=>{
+const PokemonCard = ({id,name,img,types,attack})=>{
     return(
         <div>
             <Link to={`/home/${id}`}>
@@ -17,6 +17,7 @@ const PokemonCard = ({id,name,img,types})=>{
                     )
                 })
             }
+            <p>{attack}</p>
         </div>
     )
 }

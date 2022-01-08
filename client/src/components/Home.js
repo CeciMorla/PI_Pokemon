@@ -1,10 +1,10 @@
 import React, {useEffect, useState} from "react";
 import { useSelector } from "react-redux";
 import Nav from "./Nav";
-import { getAllPokemons, getType, filterByType } from "../actions";
+import { getAllPokemons, getType, filterByType, filterByCreated, OrderBy } from "../actions";
 import { useDispatch } from "react-redux";
-import PokemonCard from "./PokemonCard";
 import Paged from "./Paged";
+import Cards from "./Cards";
 
 
 
@@ -12,6 +12,7 @@ const Home = () =>{
     const dispatch = useDispatch();
     const types = useSelector((state) => state.types);
     const pokemons = useSelector((state)=> state.pokemons);
+    const [order,setOrder] = useState('');
     const [currentPage,setCurrentPage] = useState(1);
     const pokemonPage = 12;
     const lastPokemon = currentPage * pokemonPage;
@@ -33,27 +34,33 @@ const Home = () =>{
         setCurrentPage(1);
     }
 
+    function handleFilterCreated(e){
+        e.preventDefault();
+        dispatch(filterByCreated(e.target.value));
+        setCurrentPage(1);
+    }
+
+    function handleOrderSort(e){
+        e.preventDefault();
+        dispatch(OrderBy(e.target.value));
+        setCurrentPage(1);
+        setOrder(e.target.value);
+    }
+
     return(
         <div>
             <Nav 
                 types={types}
                 handleFilterType={handleFilterType}
+                handleFilterCreated={handleFilterCreated}
+                handleOrderSort={handleOrderSort}
             />
             <Paged 
                 pokemonPage={pokemonPage}
                 pokemons={pokemons.length}
                 paged={paged}
             />
-            {
-                currentPokemon?.map(p=> <PokemonCard
-                                name={p.name}
-                                img={p.img}
-                                types={p.type}
-                                id={p.id}
-                                key={p.id}
-                            />)
-            }
-
+            <Cards currentPokemon={currentPokemon}/>
         </div>
     )
 }

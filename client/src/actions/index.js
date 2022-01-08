@@ -3,8 +3,7 @@ import {GET_ALL_POKEMON} from './constantes';
 import {GET_TYPE} from './constantes';
 import {FILTER_BY_CREATED} from './constantes';
 import {FILTER_BY_TYPE} from './constantes';
-import {ORDER_ALFABETIC} from './constantes';
-import {ORDER_BY_FORCE} from './constantes';
+import {ORDER_BY} from './constantes';
 import {CREATE_POKEMON} from './constantes';
 
 
@@ -46,6 +45,22 @@ export const filterByType = (payload) =>{
     
     return{
         type: FILTER_BY_TYPE,
+        payload: payload
+    }
+}
+
+export const filterByCreated = (payload) =>{
+    
+    return{
+        type: FILTER_BY_CREATED,
+        payload: payload
+    }
+}
+
+export const OrderBy = (payload) =>{
+
+    return{
+        type: ORDER_BY,
         payload: payload
     }
 }

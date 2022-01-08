@@ -1,9 +1,33 @@
 const axios = require('axios').default;
 const {Pokemon,Type}  = require('../db.js');
 
+let apiPokemon = async () => {
+    try {
+      let info = [];
+      for (let i = 1; i <= 40; i++) {
+        info.push(axios.get("https://pokeapi.co/api/v2/pokemon/" + i)); //hace el await una vez por bucle
+      }
+  
+      // info.push(axios.get("https://pokeapi.co/api/v2/pokemon?limit=40"));
+      return await Promise.all(info).then((response) => {
+        //Espera a que todas las funciones asincronicas se
+        const pokemones = response.map((info) => {
+          return (poke = {
+            name: info.data.name,
+            id: info.data.id,
+            img: info.data.sprites.other.dream_world.front_default,
+            types: info.data.types.map((e) => e.type.name),
+            attack: info.data.stats[1].base_stat,
+          });
+        });
+        return pokemones;
+      });
+    } catch (err) {
+      next(err);
+    }
+  };
 
-
-const apiPokemon = async() =>{
+/*const apiPokemon = async() =>{
     try {
         let api = await axios.get('https://pokeapi.co/api/v2/pokemon?limit=40');
     let infoPokemon = await api.data.results;
@@ -26,17 +50,29 @@ const apiPokemon = async() =>{
         return error;
     }
     
-}
+}*/
 
 const dbPokemon = async() =>{
     try {
         return await Pokemon.findAll({
-            include: Type,
-            attributes : ['name'],
+             
+            attributes : ['name', 'id', 'img', 'createdId', 'attack'],
+            include: {model:Type},
             through:{
                 attributes: [],
             }
-        });
+        })
+        .then(p =>
+            p.map(e=>{
+                return{
+                    id: e.id,
+                    name: e.name,
+                    img: e.img,
+                    createdId: e.createdId,
+                    types: e.types.map((t) => t.name),
+                    attack: e.attack
+                }
+            }))
     } catch (error) {
         return error;
     }
@@ -82,7 +118,8 @@ const allPokemonId = async(id)=>{
                 defense: dbPokemonId.defense,
                 speed: dbPokemonId.speed,
                 height: dbPokemonId.height,
-                weight: dbPokemonId.weight
+                weight: dbPokemonId.weight,
+                
             }
        return pokemonIdDb;}
     } catch (error) {

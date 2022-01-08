@@ -15,10 +15,13 @@ module.exports = (sequelize) => {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    life: {
+    hp: {
       type: DataTypes.INTEGER,
     },
-    force: {
+    img: {
+      type: DataTypes.STRING,
+    },
+    attack: {
       type: DataTypes.INTEGER,
     },
     defense: {
@@ -32,6 +35,11 @@ module.exports = (sequelize) => {
     },
     weigth: {
       type: DataTypes.FLOAT,
+    },
+    createdId: {
+      type: DataTypes.BOOLEAN,
+      allowNull: false,
+      defaultValue: true
     },
 
   });

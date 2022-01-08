@@ -36,24 +36,25 @@ router.get('/:id', async(req,res)=>{
 });
 
 router.post('/', async (req,res)=>{
-    const { name, life, force, defense, speed, heigth, weigth, types } = req.body;
+    const { name, hp, attack, defense, speed, heigth, weigth, types, img } = req.body;
     
-    if(!name) res.json({msg:'El nombre es obligario'});
+    if(!name) res.json({msg:'El nombre es obligatorio'});
     
-    if(isNaN(life) || isNaN(force) || isNaN(defense) || isNaN(speed)  || isNaN(heigth) || isNaN(weigth)) res.json({msg: 'Debe ser un numero'});
+    if(isNaN(hp) || isNaN(attack) || isNaN(defense) || isNaN(speed)  || isNaN(heigth) || isNaN(weigth)) res.json({msg: 'Debe ser un numero'});
 
     try {
         let pokemonExist = await Pokemon.findOne({
             where:{
-                name : name,
+                name : name.toLowerCase(),
             }
         });
         if(pokemonExist) return res.json({msg: 'Pokemon existente'});
     
         let newPokemon = await Pokemon.create({
             name : name.toLowerCase(),
-            life : life,
-            force: force,
+            img : img,
+            hp : hp,
+            attack: attack,
             defense: defense,
             speed: speed,
             heigth: heigth,
