@@ -41,3 +41,11 @@ export const getType = ()=>{
                 .catch((error) => {console.group(error)})
     }
 }
+
+export const filterByType = (payload) =>{
+    
+    return{
+        type: FILTER_BY_TYPE,
+        payload: payload
+    }
+}

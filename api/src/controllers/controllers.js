@@ -1,6 +1,8 @@
 const axios = require('axios').default;
 const {Pokemon,Type}  = require('../db.js');
 
+
+
 const apiPokemon = async() =>{
     try {
         let api = await axios.get('https://pokeapi.co/api/v2/pokemon?limit=40');
@@ -73,7 +75,7 @@ const allPokemonId = async(id)=>{
             let dbPokemonId = await Pokemon.findByPk(id, {include:Type});
             let pokemonIdDb={
                 id: dbPokemonId.id,
-                img : 'https://media.giphy.com/media/FD5ovQ3QfoPgxfPYqC/giphy.gif',
+                img : "https://img.search.brave.com/DgXhYLiK-dmzv7iCMP20jz0Q5UFOhY5KVdM6_bT27f8/fit/256/228/ce/1/aHR0cHM6Ly82NC5t/ZWRpYS50dW1ibHIu/Y29tLzcwOGQ0NWYw/ZGZmOGM2MjhmOWI1/OWI3ZWYwYjU2Yjdm/L3R1bWJscl9pbmxp/bmVfb2l5YXR1dTZk/dzF1MGF4eDdfNTQw/LmdpZnY",
                 name: dbPokemonId.name,
                 life: dbPokemonId.life,
                 force: dbPokemonId.force,

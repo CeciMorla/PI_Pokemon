@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import SearchBar from "./SearchBar";
 
 
-const Nav = ({types}) =>{
+const Nav = ({types,handleFilterType}) =>{
     return (
         <div>
             <Link to='/create'>
@@ -20,7 +20,7 @@ const Nav = ({types}) =>{
                 <option value='created'>Creados</option>
                 <option value='exist'>Existente</option>
             </select>
-            <select>
+            <select onChange={(e)=> handleFilterType(e)}>
                 <option value='allTypes'>Tipos</option>
                 {
                     types?.map(t=>{
