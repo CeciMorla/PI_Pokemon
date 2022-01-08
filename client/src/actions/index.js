@@ -5,6 +5,7 @@ import {FILTER_BY_CREATED} from './constantes';
 import {FILTER_BY_TYPE} from './constantes';
 import {ORDER_BY} from './constantes';
 import {CREATE_POKEMON} from './constantes';
+import {POKEMON_DETAIL} from './constantes';
 
 
 
@@ -38,6 +39,17 @@ export const getType = ()=>{
                     dispatch({type:GET_TYPE, payload: json});
                 })
                 .catch((error) => {console.group(error)})
+    }
+}
+
+export const pokemonDetail = (id) =>{
+    return function (dispatch){
+        return  fetch(`http://localhost:3001/pokemons/${id}`)
+                .then(response => response.json())
+                .then((json)=>{
+                    dispatch({type:POKEMON_DETAIL, payload: json});
+                })
+                .catch((error)=>{console.log(error)})
     }
 }
 

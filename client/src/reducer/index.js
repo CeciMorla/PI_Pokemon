@@ -5,11 +5,13 @@ import {FILTER_BY_CREATED} from '../actions/constantes';
 import {ORDER_BY} from '../actions/constantes';
 import {CREATE_POKEMON} from '../actions/constantes';
 import {FILTER_BY_TYPE} from '../actions/constantes';
+import {POKEMON_DETAIL} from '../actions/constantes';
 
 const initialState = {
     pokemons : [],
     allPokemons: [],
     types: [],
+    pokemon : [],
     
 };
 
@@ -97,6 +99,11 @@ const rootReducer = (state = initialState, action)=>{
                 ...state,
                 pokemons : orderSort
             };
+        case POKEMON_DETAIL:
+            return{
+                ...state,
+                pokemon : action.payload
+            }
             
         default: 
                 return state;

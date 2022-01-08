@@ -6,7 +6,7 @@ const PokemonCard = ({id,name,img,types,attack})=>{
         <div>
             <Link to={`/home/${id}`}>
                 <h1>{name}</h1>
-            </Link>
+            
             <img src={img} alt="img"/>
             {
                 types?.map((p,i) =>{
@@ -18,6 +18,7 @@ const PokemonCard = ({id,name,img,types,attack})=>{
                 })
             }
             <p>{attack}</p>
+            </Link>
         </div>
     )
 }

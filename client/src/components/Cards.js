@@ -9,6 +9,7 @@ const Cards = ({currentPokemon})=>{
                     currentPokemon.map(e=>{
                         return(
                             <PokemonCard
+                                id = {e.id}
                                 name = {e.name}
                                 types = {e.types}
                                 img = {e.img}
