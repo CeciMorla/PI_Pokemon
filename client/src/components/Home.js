@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from "react";
 import { useSelector } from "react-redux";
 import Nav from "./Nav";
-import { getAllPokemons, getType, filterByType, filterByCreated, OrderBy } from "../actions";
+import { getAllPokemons, getType, filterByType, filterByCreated, orderBy } from "../actions";
 import { useDispatch } from "react-redux";
 import Paged from "./Paged";
 import Cards from "./Cards";
@@ -12,7 +12,7 @@ const Home = () =>{
     const dispatch = useDispatch();
     const types = useSelector((state) => state.types);
     const pokemons = useSelector((state)=> state.pokemons);
-    const [order,setOrder] = useState('');
+    const [,setOrder] = useState('');
     const [currentPage,setCurrentPage] = useState(1);
     const pokemonPage = 12;
     const lastPokemon = currentPage * pokemonPage;
@@ -42,7 +42,7 @@ const Home = () =>{
 
     function handleOrderSort(e){
         e.preventDefault();
-        dispatch(OrderBy(e.target.value));
+        dispatch(orderBy(e.target.value));
         setCurrentPage(1);
         setOrder(e.target.value);
     }

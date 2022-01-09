@@ -103,6 +103,10 @@ const rootReducer = (state = initialState, action)=>{
             return{
                 ...state,
                 pokemon : action.payload
+            };
+        case CREATE_POKEMON:
+            return{
+                ...state,
             }
             
         default: 

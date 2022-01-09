@@ -111,7 +111,7 @@ const allPokemonId = async(id)=>{
             let dbPokemonId = await Pokemon.findByPk(id, {include:Type});
             let pokemonIdDb={
                 id: dbPokemonId.id,
-                img : dbPokemonId.img,
+                img : 'https://img.search.brave.com/DgXhYLiK-dmzv7iCMP20jz0Q5UFOhY5KVdM6_bT27f8/fit/256/228/ce/1/aHR0cHM6Ly82NC5t/ZWRpYS50dW1ibHIu/Y29tLzcwOGQ0NWYw/ZGZmOGM2MjhmOWI1/OWI3ZWYwYjU2Yjdm/L3R1bWJscl9pbmxp/bmVfb2l5YXR1dTZk/dzF1MGF4eDdfNTQw/LmdpZnY',
                 name: dbPokemonId.name,
                 hp: dbPokemonId.hp,
                 attack: dbPokemonId.attack,

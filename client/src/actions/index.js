@@ -9,6 +9,7 @@ import {POKEMON_DETAIL} from './constantes';
 
 
 
+
 export const getAllPokemons =() => {
     return function (dispatch) {
         return  fetch('http://localhost:3001/pokemons')
@@ -53,6 +54,23 @@ export const pokemonDetail = (id) =>{
     }
 }
 
+export const createPokemon = (payload) =>{
+    return function(dispatch){
+        return fetch('http://localhost:3001/pokemons',{
+                        method: 'POST',
+                        headers: {'Content-Type': 'application/json'},
+                        body: JSON.stringify(payload)
+        })
+            .then(response =>response.json())
+            .then((json)=>{
+                dispatch({type: CREATE_POKEMON, payload: json});
+            })
+            .catch((error) =>{console.log(error)})
+    }
+    
+}
+
+
 export const filterByType = (payload) =>{
     
     return{
@@ -69,7 +87,7 @@ export const filterByCreated = (payload) =>{
     }
 }
 
-export const OrderBy = (payload) =>{
+export const orderBy = (payload) =>{
 
     return{
         type: ORDER_BY,
@@ -77,10 +95,3 @@ export const OrderBy = (payload) =>{
     }
 }
 
-export const CreatePokemon = (payload) =>{
-
-    return{
-        type: CREATE_POKEMON,
-        payload: payload
-    }
-}

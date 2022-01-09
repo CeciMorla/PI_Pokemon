@@ -36,23 +36,23 @@ router.get('/:id', async(req,res)=>{
 });
 
 router.post('/', async (req,res)=>{
-    const { name, hp, attack, defense, speed, heigth, weigth, types, img } = req.body;
+    const { name, hp, attack, defense, speed, heigth, weigth, types } = req.body;
     
-    if(!name) res.json({msg:'El nombre es obligatorio'});
+    //if(!name) res.json({msg:'El nombre es obligatorio'});
     
-    if(isNaN(hp) || isNaN(attack) || isNaN(defense) || isNaN(speed)  || isNaN(heigth) || isNaN(weigth)) res.json({msg: 'Debe ser un numero'});
+    //if(isNaN(hp) || isNaN(attack) || isNaN(defense) || isNaN(speed)  || isNaN(heigth) || isNaN(weigth)) res.json({msg: 'Debe ser un numero'});
 
     try {
-        let pokemonExist = await Pokemon.findOne({
-            where:{
-                name : name.toLowerCase(),
-            }
-        });
-        if(pokemonExist) return res.json({msg: 'Pokemon existente'});
+        //let pokemonExist = await Pokemon.findOne({
+        //    where:{
+        //        name : name.toLowerCase(),
+        //    }
+        //});
+        //if(pokemonExist) return res.json({msg: 'Pokemon existente'});
     
         let newPokemon = await Pokemon.create({
             name : name.toLowerCase(),
-            img : img,
+            img : 'https://img.search.brave.com/DgXhYLiK-dmzv7iCMP20jz0Q5UFOhY5KVdM6_bT27f8/fit/256/228/ce/1/aHR0cHM6Ly82NC5t/ZWRpYS50dW1ibHIu/Y29tLzcwOGQ0NWYw/ZGZmOGM2MjhmOWI1/OWI3ZWYwYjU2Yjdm/L3R1bWJscl9pbmxp/bmVfb2l5YXR1dTZk/dzF1MGF4eDdfNTQw/LmdpZnY',
             hp : hp,
             attack: attack,
             defense: defense,
