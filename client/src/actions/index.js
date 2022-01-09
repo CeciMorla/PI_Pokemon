@@ -76,3 +76,11 @@ export const OrderBy = (payload) =>{
         payload: payload
     }
 }
+
+export const CreatePokemon = (payload) =>{
+
+    return{
+        type: CREATE_POKEMON,
+        payload: payload
+    }
+}

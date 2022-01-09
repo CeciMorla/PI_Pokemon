@@ -98,9 +98,9 @@ const allPokemonId = async(id)=>{
                     id: pokemonId.data.id,
                     img : pokemonId.data.sprites.other.dream_world.front_default,
                     name: pokemonId.data.name,
-                    type: pokemonId.data.types.map(t => t.type.name),
-                    life: pokemonId.data.stats[0].base_stat,
-                    force: pokemonId.data.stats[1].base_stat,
+                    types: pokemonId.data.types.map(t => t.type.name),
+                    hp: pokemonId.data.stats[0].base_stat,
+                    attack: pokemonId.data.stats[1].base_stat,
                     defense: pokemonId.data.stats[2].base_stat,
                     speed: pokemonId.data.stats[5].base_stat,
                     height: pokemonId.data.height,
@@ -111,19 +111,19 @@ const allPokemonId = async(id)=>{
             let dbPokemonId = await Pokemon.findByPk(id, {include:Type});
             let pokemonIdDb={
                 id: dbPokemonId.id,
-                img : "https://img.search.brave.com/DgXhYLiK-dmzv7iCMP20jz0Q5UFOhY5KVdM6_bT27f8/fit/256/228/ce/1/aHR0cHM6Ly82NC5t/ZWRpYS50dW1ibHIu/Y29tLzcwOGQ0NWYw/ZGZmOGM2MjhmOWI1/OWI3ZWYwYjU2Yjdm/L3R1bWJscl9pbmxp/bmVfb2l5YXR1dTZk/dzF1MGF4eDdfNTQw/LmdpZnY",
+                img : dbPokemonId.img,
                 name: dbPokemonId.name,
-                life: dbPokemonId.life,
-                force: dbPokemonId.force,
+                hp: dbPokemonId.hp,
+                attack: dbPokemonId.attack,
                 defense: dbPokemonId.defense,
                 speed: dbPokemonId.speed,
-                height: dbPokemonId.height,
-                weight: dbPokemonId.weight,
+                heigth: dbPokemonId.heigth,
+                weigth: dbPokemonId.weigth,
                 
             }
        return pokemonIdDb;}
     } catch (error) {
-        return 'No existe el pokemon';
+        return error;
     }
 }
 
