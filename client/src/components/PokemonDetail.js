@@ -33,8 +33,8 @@ const PokemonDetail = () =>{
             <h5>Defense: {pokemon.defense}</h5>
             <h5>HP: {pokemon.hp}</h5>
             <h5>Speed: {pokemon.speed}</h5>
-            <h5>Heigth: {pokemon.heigth}</h5>
-            <h5>Weigth: {pokemon.weigth}</h5>
+            <h5>Height: {pokemon.height}</h5>
+            <h5>Weight: {pokemon.weight}</h5>
         </div>
     )
 }

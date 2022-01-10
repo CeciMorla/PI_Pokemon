@@ -23,36 +23,11 @@ let apiPokemon = async () => {
         return pokemones;
       });
     } catch (err) {
-      next(err);
+      return(err);
     }
   };
 
-/*const apiPokemon = async() =>{
-    try {
-        let api = await axios.get('https://pokeapi.co/api/v2/pokemon?limit=40');
-    let infoPokemon = await api.data.results;
-
-    let pokemonInfo = [];
-    for (let i = 0; i < infoPokemon.length; i++) {
-        if(!infoPokemon[i]) return pokemonInfo;
-        if(infoPokemon[i].url){
-            const pokemon = await axios.get(infoPokemon[i].url);
-            pokemonInfo.push({
-                id: pokemon.data.id,
-                img : pokemon.data.sprites.other.dream_world.front_default,
-                name: pokemon.data.name,
-                type: pokemon.data.types.map(t => t.type.name)
-            });
-        }
-    }
-    return pokemonInfo;
-    } catch (error) {
-        return error;
-    }
-    
-}*/
-
-const dbPokemon = async() =>{
+  const dbPokemon = async() =>{
     try {
         return await Pokemon.findAll({
              
@@ -118,13 +93,13 @@ const allPokemonId = async(id)=>{
                 attack: dbPokemonId.attack,
                 defense: dbPokemonId.defense,
                 speed: dbPokemonId.speed,
-                heigth: dbPokemonId.heigth,
-                weigth: dbPokemonId.weigth,
+                height: dbPokemonId.height,
+                weight: dbPokemonId.weight,
                 
             }
        return pokemonIdDb;}
     } catch (error) {
-        return error;
+        return 'No se encontro Pokemon';
     }
 }
 

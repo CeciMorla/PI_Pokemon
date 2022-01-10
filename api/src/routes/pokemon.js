@@ -9,13 +9,15 @@ router.get('/', async(req,res)=>{
         let infoPokemons = await allPokemon();
     if(name){
         let pokemonName = await infoPokemons.filter(e => e.name.toLowerCase().includes(name.toLowerCase()));
-        if(pokemonName){
-            res.send(pokemonName)
-        }else{
-            res.status(404).send('Error');
+        if(pokemonName.length === 0){
+            res.status(404).send('No se encontro Pokemon');
+        } 
+        else{
+            res.status(200).send(pokemonName);
         }
     }else{
         res.json(infoPokemons);
+        
     }
     } catch (error) {
         res.status(404).send(error);
@@ -36,7 +38,7 @@ router.get('/:id', async(req,res)=>{
 });
 
 router.post('/', async (req,res)=>{
-    const { name, hp, attack, defense, speed, heigth, weigth, types } = req.body;
+    const { name, hp, attack, defense, speed, height, weight, types } = req.body;
     
     //if(!name) res.json({msg:'El nombre es obligatorio'});
     
@@ -57,8 +59,8 @@ router.post('/', async (req,res)=>{
             attack: attack,
             defense: defense,
             speed: speed,
-            heigth: heigth,
-            weigth: weigth
+            height: height,
+            weight: weight
         });
     
         let pokemonType = await Type.findAll({

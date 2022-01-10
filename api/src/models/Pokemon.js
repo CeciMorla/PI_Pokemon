@@ -30,10 +30,10 @@ module.exports = (sequelize) => {
     speed: {
       type: DataTypes.INTEGER,
     },
-    heigth: {
+    height: {
       type: DataTypes.FLOAT,
     },
-    weigth: {
+    weight: {
       type: DataTypes.FLOAT,
     },
     createdId: {

@@ -13,7 +13,7 @@ const Cards = ({currentPokemon})=>{
                                 name = {e.name}
                                 types = {e.types}
                                 img = {e.img}
-                                attack={e.attack}
+                                //attack={e.attack}
                                 key = {e.id}
                             />
                         )
