@@ -22,6 +22,13 @@ const CreatePokemon = ()=>{
         })
     }
 
+    function handleSelect(e){
+        setInput({
+            ...input,
+            types : [...input.types, e.target.value]
+        })
+    }
+
     function handleSubmit(e){
         e.preventDefault();
         dispatch(createPokemon(input));
@@ -36,11 +43,12 @@ const CreatePokemon = ()=>{
     return(
         <div>
             <form onSubmit={handleSubmit}>
+                <label>Nombre: </label>
                 <input 
                     type='text'
                     value={input.name}
                     name='name'
-                    placeholder='Name...'
+                    placeholder='Nombre...'
                     onChange={handleOnChange}
                 />
                 <input
@@ -85,7 +93,7 @@ const CreatePokemon = ()=>{
                     placeholder='Weigth...'
                     onChange={handleOnChange}
                 />
-                <select onChange={(e)=> handleOnChange(e)}>
+                <select onChange={(e)=> handleSelect(e)}>
                 <option value='allTypes'>Tipos</option>
                 {
                     types?.map(t=>{
@@ -96,9 +104,9 @@ const CreatePokemon = ()=>{
                         )
                     })
                 }
-                    
                 </select>
-                <button>Create</button>
+                <ul><li>{input.types?.map(e => e + ',')}</li></ul>
+                <button type='submit'>Create</button>
             </form>
         </div>
     )
