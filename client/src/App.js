@@ -1,9 +1,9 @@
 import './App.css';
 import { Route } from 'react-router-dom';
-import Landing from './components/Landing.js';
-import Home from './components/Home.js';
-import PokemonDetail from './components/PokemonDetail.js';
-import CreatePokemon from './components/CreatePokemon.js';
+import Landing from './components/Landing/Landing.js';
+import Home from './components/Home/Home.js';
+import PokemonDetail from './components/PokemonDetail/PokemonDetail.js';
+import CreatePokemon from './components/CreatePokemon/CreatePokemon.js';
 
 
 

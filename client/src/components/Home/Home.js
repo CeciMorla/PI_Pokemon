@@ -1,10 +1,10 @@
 import React, {useEffect, useState} from "react";
 import { useSelector } from "react-redux";
-import Nav from "./Nav";
-import { getAllPokemons, getType, filterByType, filterByCreated, orderBy } from "../actions";
+import Nav from "../Nav/Nav.js";
+import { getAllPokemons, getType, filterByType, filterByCreated, orderBy } from "../../actions/index.js";
 import { useDispatch } from "react-redux";
-import Paged from "./Paged";
-import Cards from "./Cards";
+import Paged from "../Paged/Paged.js";
+import Cards from "../Cards/Cards.js";
 
 
 

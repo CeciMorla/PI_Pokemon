@@ -1,6 +1,6 @@
 import React, {useEffect} from "react";
 import { useDispatch, useSelector } from 'react-redux';
-import { pokemonDetail } from '../actions/index.js';
+import { pokemonDetail } from '../../actions/index.js';
 import { useParams } from "react-router-dom";
 
 const PokemonDetail = () =>{

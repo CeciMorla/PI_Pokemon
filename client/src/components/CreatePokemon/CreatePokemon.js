@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
-import { createPokemon, getType, getAllPokemons } from '../actions/index.js'
+import { createPokemon, getType, getAllPokemons } from '../../actions/index.js'
 
 function validate(input){
     let errors = {};
