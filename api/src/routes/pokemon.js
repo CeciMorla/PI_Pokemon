@@ -45,12 +45,12 @@ router.post('/', async (req,res)=>{
     //if(isNaN(hp) || isNaN(attack) || isNaN(defense) || isNaN(speed)  || isNaN(heigth) || isNaN(weigth)) res.json({msg: 'Debe ser un numero'});
 
     try {
-        //let pokemonExist = await Pokemon.findOne({
-        //    where:{
-        //        name : name.toLowerCase(),
-        //    }
-        //});
-        //if(pokemonExist) return res.json({msg: 'Pokemon existente'});
+        let pokemonExist = await Pokemon.findOne({
+            where:{
+                name : name.toLowerCase(),
+            }
+        });
+        if(pokemonExist) return res.json({msg: 'Pokemon existente'});
     
         let newPokemon = await Pokemon.create({
             name : name.toLowerCase(),

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
-import { createPokemon, getType } from '../actions/index.js'
+import { createPokemon, getType, getAllPokemons } from '../actions/index.js'
 
 function validate(input){
     let errors = {};
@@ -20,12 +20,16 @@ function validate(input){
     if(input.speed < 0){
         errors.speed = 'Debe ser mayor a 0'
     }
-    if(input.heigth < 0){
-        errors.heigth = 'Debe ser mayor a 0'
+    if(input.height < 0){
+        errors.height = 'Debe ser mayor a 0'
     }
-    if(input.weigth < 0){
-        errors.weigth = 'Debe ser mayor a 0'
+    if(input.weight < 0){
+        errors.weight = 'Debe ser mayor a 0'
     }
+    if(input.types.length === 0){
+        errors.types = 'Debe tener al menos un tipo'
+    }
+    
     
     return errors;
 }
@@ -36,11 +40,13 @@ const CreatePokemon = ()=>{
     const history = useHistory();
     const types = useSelector((state) => state.types);
     const pokemons = useSelector((state) => state.pokemons);
-    const [input,setInput] = useState({name: "",hp: "",attack: "",defense: "",speed: "",heigth: "",weigth: "",types: [],img: ""});
+    const [input,setInput] = useState({name: "",hp: "",attack: "",defense: "",speed: "", height: "",weight: "",types: []});
     const [errors,setErrors] = useState({});
+    const [button,setButton] = useState(false);
     
     useEffect(()=>{
         dispatch(getType());
+        dispatch(getAllPokemons())
     },[])
 
 
@@ -55,37 +61,49 @@ const CreatePokemon = ()=>{
               [e.target.name]: e.target.value,
             })
           );
-          if (
-            pokemons.find(
-              (poke) =>
-                poke.name.toLowerCase() === e.target.value.toLowerCase().trim()
-            )
-          ) {
+        if(input.name === '' || input.hp === '' || input.attack === '' || input.defense === '' || input.height === '' || input.weight === ''){
+            setButton(false)
+        }else{
+            setButton(true)
+            setButton(false)
+        }
+       
+
+    }
+    
+    function handleSelect(e){
+        setInput({
+                ...input,
+                types : [...input.types , e.target.value]
+            })
+            setButton(true)
+    }
+        
+        
+
+    
+
+    function handleSubmit(e){
+        e.preventDefault();
+        if (pokemons.find((poke) =>poke.name.toLowerCase() === input.name.toLowerCase().trim())) {
+            alert("Ya existe el Pokemon");
             setErrors({
               ...input,
               [e.target.name]: "Pokémon duplicated",
             });
-            alert("Pokemon duplicated");
+            history.push('/home')
+          }else{
+            dispatch(createPokemon(input));
+            alert('Pokemon Created');
+            setInput({
+                name: "",hp: "",attack: "",defense: "",speed: "",height: "",weight: "",types: []});
+            history.push('/home');
           }
-    }
-
-    function handleSelect(e){
-        setInput({
-            ...input,
-            types : [...input.types, e.target.value]
-        })
-    }
-
-    function handleSubmit(e){
-        e.preventDefault();
-        dispatch(createPokemon(input));
-        alert('Pokemon Created');
-        setInput({
-            name: "",hp: "",attack: "",defense: "",speed: "",height: "",weight: "",types: [],img: ""
-        })
-        history.push('/home');
+        
         
     }
+
+    
 
     return(
         <div>
@@ -98,9 +116,7 @@ const CreatePokemon = ()=>{
                     placeholder='Nombre...'
                     onChange={handleOnChange}
                 />
-                {errors.name && (
-                    <p>{errors.name}</p>
-                )}
+                {errors.name && (<p>{errors.name}</p>)}
                 <label>HP: </label>
                 <input
                     type='number'
@@ -109,9 +125,7 @@ const CreatePokemon = ()=>{
                     placeholder='HP...'
                     onChange={handleOnChange}
                 />
-                {errors.hp && (
-                    <p>{errors.hp}</p>
-                )}
+                {errors.hp && (<p>{errors.hp}</p>)}
                 <label>Ataque: </label>
                 <input
                     type='number'
@@ -120,6 +134,7 @@ const CreatePokemon = ()=>{
                     placeholder='Ataque...'
                     onChange={handleOnChange}
                 />
+                {errors.attack && (<p>{errors.attack}</p>)}
                 <label>Defensa: </label>
                 <input
                     type='number'
@@ -128,6 +143,7 @@ const CreatePokemon = ()=>{
                     placeholder='Defensa...'
                     onChange={handleOnChange}
                 />
+                {errors.defense && (<p>{errors.defense}</p>)}
                 <label>Velocidad: </label>
                 <input
                     type='number'
@@ -136,6 +152,7 @@ const CreatePokemon = ()=>{
                     placeholder='Velocidad...'
                     onChange={handleOnChange}
                 />
+                {errors.speed && (<p>{errors.speed}</p>)}
                 <label>Altura: </label>
                 <input
                     type='number'
@@ -144,6 +161,7 @@ const CreatePokemon = ()=>{
                     placeholder='Altura...'
                     onChange={handleOnChange}
                 />
+                {errors.height && (<p>{errors.height}</p>)}
                 <label>Peso: </label>
                 <input
                     type='number'
@@ -152,8 +170,9 @@ const CreatePokemon = ()=>{
                     placeholder='Peso...'
                     onChange={handleOnChange}
                 />
-                <select onChange={(e)=> handleSelect(e)}>
-                <option value='allTypes'>Tipos</option>
+                {errors.weight && (<p>{errors.weight}</p>)}
+                <select  value='DEFAULT' onChange={(e)=> handleSelect(e)}>
+                <option value='DEFAULT' disabled>Tipos</option>
                 {
                     types?.map(t=>{
                         return (
@@ -164,8 +183,9 @@ const CreatePokemon = ()=>{
                     })
                 }
                 </select>
-                <ul><li>{input.types?.map(e => e + ',')}</li></ul>
-                <button type='submit'>Create</button>
+                {errors.types && (<p>{errors.types}</p>)}
+                <ul><li>{input.types?.map(e => e + ' ')}</li></ul>
+                <button type='submit' disabled={!button}>Crear</button>
             </form>
         </div>
     )
