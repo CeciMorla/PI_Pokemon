@@ -43,6 +43,7 @@
     margin: unset;
     margin-left: -195px;
     font-weight: 600;
+    color: black;
 }
 
 .types{
@@ -50,6 +51,7 @@
     margin: unset;
     font-weight: 600;
     padding: 4px;
+    color: black;
 }
 
 .img{

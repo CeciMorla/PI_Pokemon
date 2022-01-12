@@ -7,7 +7,7 @@ const PokemonCard = ({id,name,img,types})=>{
         <div className={style.container}>
             <Link to={`/home/${id}`} className={style.link}>
                 <h1 className={style.name}>{name}</h1>
-            </Link>
+            
                 <div className={style.image}>
                     <img src={img} alt="img" className={style.img}/>
                 </div>
@@ -23,7 +23,7 @@ const PokemonCard = ({id,name,img,types})=>{
                     )
                 })
             }
-            
+            </Link>
             
         </div>
     )
