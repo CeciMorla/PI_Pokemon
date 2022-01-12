@@ -15,7 +15,9 @@
     margin-bottom: 40px;
 }
 
-.container:hover  {-webkit-transform:scale(1.05);transform:scale(1.05);}
+.container:hover  {
+    -webkit-transform:scale(1.05);transform:scale(1.05);
+}
 
 
 .link{
