@@ -5,9 +5,16 @@
 .page{
     list-style: none;
     display: inline-table;
+    
 }
 
 .button{
-    color: rgb(202, 202, 202);
-    border: 1px solid #6A88D4;
+    color: #6A88D4;
+    border: 0.5px solid #868688;
+    padding: 10px;
+}
+
+.button:hover{
+    background-color: #b3c8ff;
+    color: #868688;
 }
