@@ -9,12 +9,13 @@
 }
 
 .button{
-    color: #6A88D4;
-    border: 0.5px solid #868688;
+    color: white;
     padding: 10px;
+    background-color: #68AE28;
+    
 }
 
 .button:hover{
-    background-color: #b3c8ff;
-    color: #868688;
+    background-color: white;
+    color: #68AE28;
 }
