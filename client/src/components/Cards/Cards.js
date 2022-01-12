@@ -1,14 +1,15 @@
 import React from "react";
 import PokemonCard from "../PokemonCard/PokemonCard.js";
+import style from './Cards.module.css';
 
 const Cards = ({currentPokemon})=>{
     return(
-        <div>
+        <div className={style.container}>
             {
                 currentPokemon.length?(
                     currentPokemon.map(e=>{
                         return(
-                            <PokemonCard
+                            <PokemonCard 
                                 id = {e.id}
                                 name = {e.name}
                                 types = {e.types}

@@ -1,0 +1,13 @@
+.container{
+    position: relative;
+}
+
+.page{
+    list-style: none;
+    display: inline-table;
+}
+
+.button{
+    color: rgb(202, 202, 202);
+    border: 1px solid #6A88D4;
+}

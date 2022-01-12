@@ -1,4 +1,5 @@
 import React from "react";
+import style from './Paged.module.css';
 
 const Paged = ({pokemonPage,pokemons,paged})=>{
     const pageNumber = [];
@@ -9,12 +10,12 @@ const Paged = ({pokemonPage,pokemons,paged})=>{
     }
 
     return(
-        <nav>
+        <nav className={style.container}>
             <ul>
                 {
                     pageNumber?.map(n =>(
-                        <li key={n}>
-                            <a onClick={()=>paged(n)}>{n}</a>
+                        <li key={n} className={style.page}>
+                            <a onClick={()=>paged(n)} className={style.button}>{n}</a>
                         </li>
                     ))
                 }

@@ -5,6 +5,7 @@ import { getAllPokemons, getType, filterByType, filterByCreated, orderBy } from 
 import { useDispatch } from "react-redux";
 import Paged from "../Paged/Paged.js";
 import Cards from "../Cards/Cards.js";
+import style from './Home.module.css';
 
 
 
@@ -48,7 +49,7 @@ const Home = () =>{
     }
 
     return(
-        <div>
+        <div className={style.container}>
             <Nav 
                 types={types}
                 handleFilterType={handleFilterType}
