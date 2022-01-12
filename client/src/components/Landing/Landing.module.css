@@ -1,6 +1,41 @@
 .landing{
     background-color: #FFCC01;
-    height: 100%;
-    width: 100%;
+    background-image: url('./img/2956077_full-fondos-de-pantalla-hd-pikachu-grandes-75-pikachu-wallpaper-on-wallpapersafari.jpg');
     position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
 }
+
+.btn{
+    
+    color: #A8713B;
+    border-color: #A8713B;
+    display: inline-block;
+    font-weight: 400;
+    line-height: 1.5;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    background-color: transparent;
+    border: 1px solid ;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    border-radius: 0.25rem;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.btn:hover{
+    color: #000;
+    background-color: #FFCC01;
+    border-color: #FFCC01;
+}
+
+.img{
+    
+}
+
