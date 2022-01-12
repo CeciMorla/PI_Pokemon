@@ -6,7 +6,7 @@ import img from './img/Bienvenidos.png'
 const Landing = ()=>{
     return (
         <div className={style.landing}>
-            <img src={img} className={style.img}/>
+            
             <Link to='/home'>
                 <button className={style.btn}>Entrar</button>
             </Link>
