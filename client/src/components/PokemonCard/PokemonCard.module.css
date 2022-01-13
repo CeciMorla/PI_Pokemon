@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@100;200;300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@1,300&display=swap');
 
 .container{
@@ -25,7 +24,7 @@
 }
 
 .name{
-    font-family: 'Be Vietnam Pro', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     text-transform: uppercase;
     color: black;
     margin-bottom: auto;
@@ -41,7 +40,7 @@
 }
 
 .type{
-    font-family: 'Be Vietnam Pro', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     margin: unset;
     margin-left: -195px;
     font-weight: 600;

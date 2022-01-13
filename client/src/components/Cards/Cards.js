@@ -7,16 +7,17 @@ const Cards = ({currentPokemon})=>{
         <div className={style.container}>
             {
                 currentPokemon.length?(
-                    currentPokemon.map(e=>{
+                    currentPokemon.map((e,i)=>{
                         return(
+                            
                             <PokemonCard 
+                                key={e.id}
                                 id = {e.id}
                                 name = {e.name}
                                 types = {e.types}
                                 img = {e.img}
-                                //attack={e.attack}
-                                key = {e.id}
                             />
+                            
                         )
                     })
                 ) : (
