@@ -12,6 +12,7 @@ const PokemonDetail = () =>{
     
     useEffect(()=>{
         dispatch(pokemonDetail(id))
+        // eslint-disable-next-line
     },[])
     
     return(
@@ -23,7 +24,7 @@ const PokemonDetail = () =>{
                 <h1 className={style.name}>{pokemon.name}</h1>
                 <h3 className={style.id}>ID: {pokemon.id}</h3>
                 <div className={style.divImg}>
-                    <img src={pokemon.img} className={style.img}/>
+                    <img src={pokemon.img} className={style.img} alt="img"/>
                 </div>
                 <h3 className={style.type}>Tipos:</h3>
                 <div className={style.divTypes}>

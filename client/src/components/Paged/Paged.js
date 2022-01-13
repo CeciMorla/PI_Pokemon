@@ -14,9 +14,7 @@ const Paged = ({pokemonPage,pokemons,paged})=>{
             <ul>
                 {
                     pageNumber?.map(n =>(
-                        <li key={n} className={style.page}>
-                            <a onClick={()=>paged(n)} className={style.button}>{n}</a>
-                        </li>
+                        <button onClick={()=>paged(n)} className={style.button} key={n}>{n}</button>
                     ))
                 }
             </ul>

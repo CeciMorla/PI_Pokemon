@@ -9,7 +9,7 @@ const Nav = ({types,handleFilterType,handleFilterCreated,handleOrderSort}) =>{
     return (
         <div className={style.container}>
             <div className={style.divImg}>
-            <img src={img} className={style.img}/>
+            <img src={img} className={style.img} alt="img"/>
             </div>
             <div className={style.divCreate}>
             <Link to='/create'>

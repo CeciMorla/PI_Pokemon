@@ -21,7 +21,12 @@ const Cards = ({currentPokemon})=>{
                         )
                     })
                 ) : (
-                    <p>NO HAY POKEMON DE ESTE TIPO</p>
+                    <div className={style.aux}>
+                    <div className={style.alert}>
+                        <p className={style.msg}>NO HAY POKEMON DE ESTE TIPO</p>
+                    </div>
+                    <div></div>
+                    </div>
                 )
             }
         </div>

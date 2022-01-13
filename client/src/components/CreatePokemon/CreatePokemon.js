@@ -48,6 +48,7 @@ const CreatePokemon = ()=>{
     useEffect(()=>{
         dispatch(getType());
         dispatch(getAllPokemons())
+        // eslint-disable-next-line
     },[])
 
 

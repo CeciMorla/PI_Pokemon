@@ -1,21 +1,20 @@
 import React, { useEffect, useState } from "react";
 import { getPokemonByName, getAllPokemons } from "../../actions";
 import { useDispatch, useSelector } from "react-redux";
-import { useHistory } from "react-router-dom";
-import style from './SearchBar.module.css';
+import  './SearchBar.module.css';
+
 
 
 
 
 const SearchBar = ()=>{
     const dispatch = useDispatch();
-    const history = useHistory();
     const [pokemon,setPokemon] = useState('');
-    const [error, setError] = useState(''); 
     const pokemons = useSelector((state) => state.pokemons);
     
     useEffect(()=>{
         dispatch(getAllPokemons())
+        // eslint-disable-next-line
     },[])
     
     
