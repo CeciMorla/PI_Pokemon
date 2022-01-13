@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;1,300;1,400;1,700&display=swap');
+
+.container{
+    background-image: url('./img/background\ \(1\).jpg');
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    padding-bottom: 24px;
+}
+
+
+.button{
+    margin:10px;
+    margin-left: -1062px;
+}
+
+.title{
+    color: #FFCC01;
+    font-family:'Open Sans', sans-serif;
+    font-size: 50px;
+    text-shadow: 2px 1px black;
+}
+
+.name{
+    font-family: 'Open Sans', sans-serif;
+    font-style: italic;
+    float:left;
+    margin-left: 519px;
+}
+
+.inputName{
+    font-family: 'Open Sans', sans-serif;
+    font-style: italic;
+    float:left;
+    margin-left: 31px;
+}
+
+.hp{
+    font-family: 'Open Sans', sans-serif;
+    font-style: italic;
+    float:left;
+    margin-left: 519px; 
+    margin-top: 27px;
+}
+
+.inputHp{
+    font-family: 'Open Sans', sans-serif;
+    font-style: italic;
+    float:left;
+    margin-left: 69px;
+    margin-top: 24px;
+}
+
+.attack{
+    font-family: 'Open Sans', sans-serif;
+    font-style: italic;
+    float:left;
+    margin-left: 519px; 
+    margin-top: 27px;
+}
+
+.inputAttack{
+    font-family: 'Open Sans', sans-serif;
+    font-style: italic;
+    float:left;
+    margin-left: 39px;
+    margin-top: 24px;
+}
+
+.defense{
+    font-family: 'Open Sans', sans-serif;
+    font-style: italic;
+    float:left;
+    margin-left: 519px; 
+    margin-top: 27px;
+}
+
+.inputDefense{
+    font-family: 'Open Sans', sans-serif;
+    font-style: italic;
+    float:left;
+    margin-left: 32px; 
+    margin-top: 24px;
+}
+
+.speed{
+    font-family: 'Open Sans', sans-serif;
+    font-style: italic;
+    float:left;
+    margin-left: 519px; 
+    margin-top: 27px;
+}
+
+.inputSpeed{
+    font-family: 'Open Sans', sans-serif;
+    font-style: italic;
+    float:left;
+    margin-left: 20px; 
+    margin-top: 24px;
+}
+
+.height{
+    font-family: 'Open Sans', sans-serif;
+    font-style: italic;
+    float:left;
+    margin-left: 519px; 
+    margin-top: 27px;
+}
+
+.inputHeight{
+    font-family: 'Open Sans', sans-serif;
+    font-style: italic;
+    float:left;
+    margin-left: 46px; 
+    margin-top: 24px;
+}
+
+.weight{
+    font-family: 'Open Sans', sans-serif;
+    font-style: italic;
+    float:left;
+    margin-left: 519px; 
+    margin-top: 27px;
+}
+
+.inputWeight{
+    font-family: 'Open Sans', sans-serif;
+    font-style: italic;
+    float:left;
+    margin-left: 56px; 
+    margin-top: 24px; 
+}
+
+.select{
+    margin-left: 519px; 
+    margin-top: 27px;
+    border-radius: 10px;
+    background-color: white;
+    width: 328px;
+    margin-left: 428px;
+    float: left;
+    height: 28px;
+    margin-left: 520px;
+}
+
+.buttonCreate{
+    margin-left: 773px;
+}
+
+.ul{
+   list-style: none;
+}
+
+.li{
+    font-family: 'Open Sans', sans-serif;
+    text-transform: uppercase;
+    color: #FFCC01;
+    font-weight: 800;
+    text-shadow: 15px 16px black;
+}
+
+.error{
+    font-family: 'Open Sans', sans-serif;
+    text-transform: uppercase;
+    color: #FFCC01;
+    font-weight: 800;
+    text-shadow: 15px 16px black;
+}

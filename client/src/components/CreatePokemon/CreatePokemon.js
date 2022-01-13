@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useHistory } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { createPokemon, getType, getAllPokemons } from '../../actions/index.js'
+import style from './CreatePokemon.module.css';
 
 function validate(input){
     let errors = {};
@@ -106,72 +107,83 @@ const CreatePokemon = ()=>{
     
 
     return(
-        <div>
-            <form onSubmit={handleSubmit}>
-                <label>Nombre: </label>
+        <div className={style.container}>
+            <Link to='/home'>
+                <button className={style.button}>Volver</button>
+            </Link>
+            <h1 className={style.title}>Creá tu propio Pokemon</h1>
+            <form onSubmit={handleSubmit} className={style.form}>
+                <label className={style.name}>Nombre: </label>
                 <input 
                     type='text'
                     value={input.name}
                     name='name'
                     placeholder='Nombre...'
                     onChange={handleOnChange}
+                    className={style.inputName}
                 />
-                {errors.name && (<p>{errors.name}</p>)}
-                <label>HP: </label>
+                {errors.name && (<p className={style.error}>{errors.name}</p>)}
+                <label className={style.hp}>HP: </label>
                 <input
                     type='number'
                     value={input.hp}
                     name='hp'
                     placeholder='HP...'
                     onChange={handleOnChange}
+                    className={style.inputHp}
                 />
-                {errors.hp && (<p>{errors.hp}</p>)}
-                <label>Ataque: </label>
+                {errors.hp && (<p className={style.error}>{errors.hp}</p>)}
+                <label className={style.attack}>Ataque: </label>
                 <input
                     type='number'
                     value={input.attack}
                     name='attack'
                     placeholder='Ataque...'
                     onChange={handleOnChange}
+                    className={style.inputAttack}
                 />
-                {errors.attack && (<p>{errors.attack}</p>)}
-                <label>Defensa: </label>
+                {errors.attack && (<p className={style.error}>{errors.attack}</p>)}
+                <label className={style.defense}>Defensa: </label>
                 <input
                     type='number'
                     value={input.defense}
                     name='defense'
                     placeholder='Defensa...'
                     onChange={handleOnChange}
+                    className={style.inputDefense}
                 />
-                {errors.defense && (<p>{errors.defense}</p>)}
-                <label>Velocidad: </label>
+                {errors.defense && (<p className={style.error}>{errors.defense}</p>)}
+                <label className={style.speed}>Velocidad: </label>
                 <input
                     type='number'
                     value={input.speed}
                     name='speed'
                     placeholder='Velocidad...'
                     onChange={handleOnChange}
+                    className={style.inputSpeed}
                 />
-                {errors.speed && (<p>{errors.speed}</p>)}
-                <label>Altura: </label>
+                {errors.speed && (<p className={style.error}>{errors.speed}</p>)}
+                <label className={style.height}>Altura: </label>
                 <input
                     type='number'
                     value={input.height}
                     name='height'
                     placeholder='Altura...'
                     onChange={handleOnChange}
+                    className={style.inputHeight}
                 />
-                {errors.height && (<p>{errors.height}</p>)}
-                <label>Peso: </label>
+                {errors.height && (<p className={style.error}>{errors.height}</p>)}
+                <label className={style.weight}>Peso: </label>
                 <input
                     type='number'
                     value={input.weight}
                     name='weight'
                     placeholder='Peso...'
                     onChange={handleOnChange}
+                    className={style.inputWeight}
                 />
-                {errors.weight && (<p>{errors.weight}</p>)}
-                <select  value='DEFAULT' onChange={(e)=> handleSelect(e)}>
+                {errors.weight && (<p className={style.error}>{errors.weight}</p>)}
+                <select  value='DEFAULT' onChange={(e)=> handleSelect(e)} className={style.select}>
                 <option value='DEFAULT' disabled>Tipos</option>
                 {
                     types?.map(t=>{
@@ -183,9 +195,9 @@ const CreatePokemon = ()=>{
                     })
                 }
                 </select>
-                {errors.types && (<p>{errors.types}</p>)}
-                <ul><li>{input.types?.map(e => e + ' ')}</li></ul>
-                <button type='submit' disabled={!button}>Crear</button>
+                {errors.types && (<p className={style.error}>{errors.types}</p>)}
+                <ul className={style.ul}><li className={style.li}>{input.types?.map(e => e + ' ')}</li></ul>
+                <button type='submit' className={style.buttonCreate} disabled={!button}>Crear</button>
             </form>
         </div>
     )
