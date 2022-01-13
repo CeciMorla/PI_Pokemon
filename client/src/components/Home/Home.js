@@ -5,6 +5,7 @@ import { getAllPokemons, getType, filterByType, filterByCreated, orderBy } from 
 import { useDispatch } from "react-redux";
 import Paged from "../Paged/Paged.js";
 import Cards from "../Cards/Cards.js";
+import Loading from "../Loading/Loading.js";
 import style from './Home.module.css';
 
 
@@ -49,22 +50,29 @@ const Home = () =>{
         setOrder(e.target.value);
     }
 
-    return(
-        <div className={style.container}>
-            <Nav 
-                types={types}
-                handleFilterType={handleFilterType}
-                handleFilterCreated={handleFilterCreated}
-                handleOrderSort={handleOrderSort}
-            />
-            <Paged 
-                pokemonPage={pokemonPage}
-                pokemons={pokemons.length}
-                paged={paged}
-            />
-            <Cards currentPokemon={currentPokemon}/>
-        </div>
-    )
+    console.log(pokemons)
+    if(pokemons.length < 1){
+        return(
+            <Loading/>
+        )
+    }else{
+        return(
+            <div className={style.container}>
+                <Nav 
+                    types={types}
+                    handleFilterType={handleFilterType}
+                    handleFilterCreated={handleFilterCreated}
+                    handleOrderSort={handleOrderSort}
+                />
+                <Paged 
+                    pokemonPage={pokemonPage}
+                    pokemons={pokemons.length}
+                    paged={paged}
+                />
+                <Cards currentPokemon={currentPokemon}/>
+            </div>
+        )
+    }
 }
 
 export default Home;
