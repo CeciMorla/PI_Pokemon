@@ -20,14 +20,8 @@ const Cards = ({currentPokemon})=>{
                             
                         )
                     })
-                ) : (
-                    <div className={style.aux}>
-                    <div className={style.alert}>
-                        <p className={style.msg}>NO HAY POKEMON DE ESTE TIPO</p>
-                    </div>
-                    <div></div>
-                    </div>
-                )
+                ) : 
+                window.location.href='http://localhost:3000/cartel'
             }
         </div>
     )

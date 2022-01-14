@@ -6,7 +6,7 @@ import style from './CreatePokemon.module.css';
 
 function validate(input){
     let errors = {};
-    if(!input.name){
+    if(input.name === ''){
         errors.name = 'Es necesario un nombre'
     }
     if(input.hp < 0){
@@ -43,7 +43,7 @@ const CreatePokemon = ()=>{
     const pokemons = useSelector((state) => state.pokemons);
     const [input,setInput] = useState({name: "",hp: "",attack: "",defense: "",speed: "", height: "",weight: "",types: []});
     const [errors,setErrors] = useState({});
-    const [button,setButton] = useState(false);
+    const [button,setButton] = useState(true);
     
     useEffect(()=>{
         dispatch(getType());
@@ -63,26 +63,25 @@ const CreatePokemon = ()=>{
               [e.target.name]: e.target.value,
             })
           );
-        if(input.name === '' || input.hp === '' || input.attack === '' || input.defense === '' || input.height === '' || input.weight === ''){
-            setButton(false)
-        }else{
-            setButton(true)
-            setButton(false)
-        }
-       
-
     }
+    
+    
     
     function handleSelect(e){
         setInput({
                 ...input,
                 types : [...input.types , e.target.value]
             })
+        if(input.name === ''  || input.hp === '' || input.attack === '' || input.defense === '' || input.height === '' || input.weight === '' || input.types.length < 0){
             setButton(true)
+        }else{
+            setButton(false)
+        }
+        
     }
         
         
-
+    console.log(button)
     
 
     function handleSubmit(e){
@@ -198,7 +197,7 @@ const CreatePokemon = ()=>{
                 </select>
                 {errors.types && (<p className={style.error}>{errors.types}</p>)}
                 <ul className={style.ul}><li className={style.li}>{input.types?.map(e => e + ' ')}</li></ul>
-                <button type='submit' className={style.buttonCreate} disabled={!button}>Crear</button>
+                <button type='submit' className={style.buttonCreate} disabled={button}>Crear</button>
             </form>
         </div>
     )

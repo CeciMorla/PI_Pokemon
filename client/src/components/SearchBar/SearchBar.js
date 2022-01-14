@@ -29,12 +29,20 @@ const SearchBar = ()=>{
             dispatch(getPokemonByName(pokemon))
             setPokemon('')
         }else{
-            alert('No existe el Pokemon')
             setPokemon('')
+            window.location.href = 'http://localhost:3000/cartel';
+            
         }
         
     }
-    
+
+    /*let handlerSubmit=(e)=>{
+        e.preventDefault(e)
+        dispatch(getPokemonByName(pokemon));
+        setPokemon('');
+    }*/
+
+
     return(
         <div>
             <form onSubmit={(e)=> handlerSubmit(e)}>

@@ -59,6 +59,7 @@ const Home = () =>{
     }else{
         return(
             <div className={style.container}>
+                
                 <Nav 
                     types={types}
                     handleFilterType={handleFilterType}

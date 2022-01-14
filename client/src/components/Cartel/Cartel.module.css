@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;1,300;1,400;1,700&display=swap');
+
+.alert{
+    background-color: #FFCC01;
+    width: 372px;
+    border-radius: 10px;
+    margin-top: 189px;
+    height: 81px;
+    margin-left: 510px;
+}
+
+.container{
+    background-size: cover;
+    background-image: url('./img/background\ \(1\).jpg');
+}
+
+.msg{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 28px;
+    margin: 60px;
+
+}
+
+.button{
+    margin: 10px;
+    margin-left: -960px;
+}
+
+.aux{
+    padding-bottom: 300px;
+}
