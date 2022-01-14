@@ -14,6 +14,7 @@ const Home = () =>{
     const dispatch = useDispatch();
     const types = useSelector((state) => state.types);
     const pokemons = useSelector((state)=> state.pokemons);
+    const allPokemon = useSelector((state) => state.allPokemons)
     const [,setOrder] = useState('');
     const [currentPage,setCurrentPage] = useState(1);
     const pokemonPage = 12;
@@ -50,8 +51,8 @@ const Home = () =>{
         setOrder(e.target.value);
     }
 
-    console.log(pokemons)
-    if(pokemons.length < 1){
+    
+    if(allPokemon.length < 1){
         return(
             <Loading/>
         )
