@@ -6,6 +6,7 @@ const PokemonCard = ({id,name,img,types})=>{
     return(
         <div className={style.container}>
             <Link to={`/home/${id}`} className={style.link}>
+            <div className={style.aux}>
                 <h1 className={style.name}>{name}</h1>
             
                 <div className={style.image}>
@@ -25,6 +26,7 @@ const PokemonCard = ({id,name,img,types})=>{
                     )
                 })
             }
+            </div>
             </Link>
             
         </div>

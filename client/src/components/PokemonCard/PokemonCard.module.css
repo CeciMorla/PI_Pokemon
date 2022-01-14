@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@1,300&display=swap');
 
 .container{
-    background-color: yellow;
+    
     width: 21%;
     height: 349px;
     border-radius: 10px;
@@ -12,12 +12,17 @@
     align-content: center;
     flex-direction: column;
     margin-bottom: 40px;
+    background-image: url('./img/th.jpg');
 }
 
 .container:hover  {
     -webkit-transform:scale(1.05);transform:scale(1.05);
 }
 
+.aux{
+    background-color: yellow;
+    margin: 10px
+}
 
 .link{
     text-decoration: none;
