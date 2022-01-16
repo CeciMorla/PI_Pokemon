@@ -12,12 +12,6 @@ const SearchBar = ()=>{
     const [pokemon,setPokemon] = useState('');
     const pokemons = useSelector((state) => state.pokemons);
     
-    useEffect(()=>{
-        dispatch(getAllPokemons())
-        // eslint-disable-next-line
-    },[])
-    
-    
     let changeInput=(e)=>{
         setPokemon(e.target.value);
     }

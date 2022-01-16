@@ -2,6 +2,7 @@ import React from "react";
 import PokemonCard from "../PokemonCard/PokemonCard.js";
 import style from './Cards.module.css';
 
+
 const Cards = ({currentPokemon})=>{
     return(
         <div className={style.container}>
@@ -22,6 +23,7 @@ const Cards = ({currentPokemon})=>{
                     })
                 ) : 
                 window.location.href='http://localhost:3000/cartel'
+                
             }
         </div>
     )

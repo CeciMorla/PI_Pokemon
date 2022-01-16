@@ -13,21 +13,21 @@ import style from './Home.module.css';
 const Home = () =>{
     const dispatch = useDispatch();
     const types = useSelector((state) => state.types);
-    const pokemons = useSelector((state)=> state.pokemons);
-    const allPokemon = useSelector((state) => state.allPokemons)
+    //const pokemons = useSelector((state)=> state.pokemons);
+    const state = useSelector((state) => state)
     const [,setOrder] = useState('');
     const [currentPage,setCurrentPage] = useState(1);
     const pokemonPage = 12;
     const lastPokemon = currentPage * pokemonPage;
     const firstPokemon = lastPokemon - pokemonPage;
-    const currentPokemon = pokemons.slice(firstPokemon,lastPokemon);
+    const currentPokemon = state.pokemons.slice(firstPokemon,lastPokemon);
 
     const paged = (page)=>{
         setCurrentPage(page)
     }
     
     useEffect(()=>{
-        dispatch(getAllPokemons());
+       dispatch(getAllPokemons());
         dispatch(getType());
         
     },[dispatch]);
@@ -52,7 +52,7 @@ const Home = () =>{
     }
 
     
-    if(allPokemon.length < 1){
+    if(state.allPokemons.length < 1){
         return(
             <Loading/>
         )
@@ -68,7 +68,7 @@ const Home = () =>{
                 />
                 <Paged 
                     pokemonPage={pokemonPage}
-                    pokemons={pokemons.length}
+                    pokemons={state.pokemons.length}
                     paged={paged}
                 />
                 <Cards currentPokemon={currentPokemon}/>
