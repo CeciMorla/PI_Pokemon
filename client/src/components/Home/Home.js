@@ -7,6 +7,7 @@ import Paged from "../Paged/Paged.js";
 import Cards from "../Cards/Cards.js";
 import Loading from "../Loading/Loading.js";
 import style from './Home.module.css';
+import Footer from "../Footer/Footer.js";
 
 
 
@@ -72,6 +73,7 @@ const Home = () =>{
                     paged={paged}
                 />
                 <Cards currentPokemon={currentPokemon}/>
+                <Footer/>
             </div>
         )
     }

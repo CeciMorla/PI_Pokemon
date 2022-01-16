@@ -13,7 +13,7 @@ const PokemonCard = ({id,name,img,types})=>{
                 <div className={style.image}>
                     <img src={img} alt="img" className={style.img}/>
                 </div>
-                <h3 className={style.type}>Tipos:</h3>
+                
             {
                 
                 types?.map((p,i) =>{

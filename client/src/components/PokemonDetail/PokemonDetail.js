@@ -18,7 +18,6 @@ const PokemonDetail = () =>{
 
     
     
-    
     if(!pokemon.name){
         
         return(

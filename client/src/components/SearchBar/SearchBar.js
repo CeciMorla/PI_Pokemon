@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { getPokemonByName, getAllPokemons } from "../../actions";
+import React, { useState } from "react";
+import { getPokemonByName } from "../../actions";
 import { useDispatch, useSelector } from "react-redux";
 import  './SearchBar.module.css';
 
@@ -29,13 +29,13 @@ const SearchBar = ()=>{
         }
         
     }
-
+    
     /*let handlerSubmit=(e)=>{
         e.preventDefault(e)
         dispatch(getPokemonByName(pokemon));
         setPokemon('');
     }*/
-
+    
 
     return(
         <div>

@@ -3,13 +3,25 @@ import { Link } from "react-router-dom";
 import SearchBar from "../SearchBar/SearchBar.js";
 import style from './Nav.module.css';
 import img from './img/5a0596df9cf05203c4b60445.png';
+import { useDispatch } from "react-redux";
+import { getAllPokemons } from "../../actions/index.js";
 
 
 const Nav = ({types,handleFilterType,handleFilterCreated,handleOrderSort}) =>{
+    const dispatch = useDispatch();
+    
+
+    function handleClick(e){
+        e.preventDefault();
+        dispatch(getAllPokemons());
+    }
+    
     return (
         <div className={style.container}>
             <div className={style.divImg}>
-            <img src={img} className={style.img} alt="img"/>
+            <Link to='/home'>
+                <img src={img} className={style.img} alt="img" onClick={handleClick}/>
+            </Link>
             </div>
             <div className={style.divCreate}>
             <Link to='/create'>
