@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import style from './PokemonCard.module.css';
 
 const PokemonCard = ({id,name,img,types})=>{
+    
     return(
         <div className={style.container}>
             <Link to={`/home/${id}`} className={style.link}>

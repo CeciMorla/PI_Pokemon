@@ -29,8 +29,8 @@ const Home = () =>{
     useEffect(()=>{
         dispatch(getAllPokemons());
         dispatch(getType());
-        // eslint-disable-next-line
-    },[]);
+        
+    },[dispatch]);
 
     function handleFilterType(e){
         e.preventDefault();
