@@ -16,7 +16,7 @@ router.get('/', async(req,res)=>{
             res.status(200).send(pokemonName);
         }
     }else{
-        res.json(infoPokemons);
+        res.status(200).json(infoPokemons);
         
     }
     } catch (error) {
@@ -30,7 +30,7 @@ router.get('/:id', async(req,res)=>{
     const { id } = req.params;
     try {
         let infoPokemon = await allPokemonId(id);
-        res.json(infoPokemon);
+        res.status(200).json(infoPokemon);
     } catch (error) {
         res.status(404).send(error);
     }
@@ -71,7 +71,7 @@ router.post('/', async (req,res)=>{
         });
     
         await newPokemon.addType(pokemonType);
-        res.json({msg: 'Pokemon creado'});
+        res.status(200).json({msg: 'Pokemon creado'});
     } catch (error) {
         res.status(404).send(error);
     }

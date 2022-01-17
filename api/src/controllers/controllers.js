@@ -27,6 +27,8 @@ let apiPokemon = async () => {
     }
   };
 
+
+
   const dbPokemon = async() =>{
     try {
         return await Pokemon.findAll({

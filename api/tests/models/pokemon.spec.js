@@ -18,5 +18,15 @@ describe('Pokemon model', () => {
         Pokemon.create({ name: 'Pikachu' });
       });
     });
+    describe('HP', () =>{
+      it('Lanza un error si HP no es un numero', (done) => {
+        Pokemon.create({hp: 'hello'})
+          .then(()=> done(new Error ('Debe ser un numero')))
+          .catch(() => done ());
+      });
+      it('Funciona con un numero', () =>{
+        Pokemon.create({hp: 20})
+      })
+    })
   });
 });

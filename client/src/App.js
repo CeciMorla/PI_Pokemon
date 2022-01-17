@@ -14,12 +14,14 @@ function App() {
   return (
     
     <div className="App">
+      
       <Route exact path='/' component={Landing}/>
       <Route exact path='/loading' component={Loading}/>
       <Route exact path='/home' component={Home}/>
       <Route exact path='/home/:id' component={PokemonDetail}/>
       <Route exact path='/create' component={CreatePokemon}/>
       <Route exact path='/cartel' component={Cartel}/>
+      
     </div>
     
     
