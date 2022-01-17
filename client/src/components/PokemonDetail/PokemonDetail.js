@@ -1,6 +1,6 @@
 import React, {useEffect} from "react";
 import { useDispatch, useSelector } from 'react-redux';
-import { pokemonDetail } from '../../actions/index.js';
+import { pokemonDetail, cleanPokemon, getAllPokemons } from '../../actions/index.js';
 import { Link, useParams } from "react-router-dom";
 import Loading from "../Loading/Loading.js";
 import style from './PokemonDetail.module.css';
@@ -13,11 +13,21 @@ const PokemonDetail = () =>{
     
     useEffect(()=>{
         dispatch(pokemonDetail(id))
+        return()=>{
+            dispatch(getAllPokemons)
+        }
+           
+        
         // eslint-disable-next-line
     },[])
 
-    
-    
+    function handlerClean(e){
+        //e.preventDefault();
+        dispatch(cleanPokemon())
+
+    }
+
+    console.log(pokemon)
     if(!pokemon.name){
         
         return(
@@ -30,7 +40,7 @@ const PokemonDetail = () =>{
             <div className={style.container}>
                 
                 <Link to='/home'>
-                    <button className={style.button}>Volver</button>
+                    <button className={style.button} onClick={()=> handlerClean()}>Volver</button>
                 </Link>
                 <div className={style.divCard}>
                     <div className={style.aux}>

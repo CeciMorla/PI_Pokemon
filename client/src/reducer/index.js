@@ -6,6 +6,7 @@ import {ORDER_BY} from '../actions/constantes';
 import {CREATE_POKEMON} from '../actions/constantes';
 import {FILTER_BY_TYPE} from '../actions/constantes';
 import {POKEMON_DETAIL} from '../actions/constantes';
+import { CLEAN_POKEMON } from '../actions/constantes';
 
 const initialState = {
     pokemons : [],
@@ -107,6 +108,11 @@ const rootReducer = (state = initialState, action)=>{
         case CREATE_POKEMON:
             return{
                 ...state,
+            }
+        case CLEAN_POKEMON:
+            return{
+                ...state,
+                pokemon: action.payload
             }
             
         default: 

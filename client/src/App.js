@@ -6,7 +6,7 @@ import PokemonDetail from './components/PokemonDetail/PokemonDetail.js';
 import CreatePokemon from './components/CreatePokemon/CreatePokemon.js';
 import Loading from './components/Loading/Loading.js';
 import Cartel from './components/Cartel/Cartel';
-import { BrowserRouter as Router } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
 
 
 
@@ -14,7 +14,7 @@ import { BrowserRouter as Router } from 'react-router-dom';
 
 function App() {
   return (
-    <Router>
+    <BrowserRouter>
     <div className="App">
       
       <Route exact path='/' component={Landing}/>
@@ -25,7 +25,7 @@ function App() {
       <Route exact path='/cartel' component={Cartel}/>
       
     </div>
-    </Router>
+    </BrowserRouter>
     
   );
 }

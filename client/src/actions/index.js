@@ -6,6 +6,7 @@ import {FILTER_BY_TYPE} from './constantes';
 import {ORDER_BY} from './constantes';
 import {CREATE_POKEMON} from './constantes';
 import {POKEMON_DETAIL} from './constantes';
+import { CLEAN_POKEMON } from './constantes';
 
 
 
@@ -95,3 +96,10 @@ export const orderBy = (payload) =>{
     }
 }
 
+export const cleanPokemon = () =>{
+    
+    return{
+        type: CLEAN_POKEMON,
+        payload: {}
+    }
+}
