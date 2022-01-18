@@ -19,8 +19,8 @@ const Home = () =>{
     const [,setOrder] = useState('');
     const [currentPage,setCurrentPage] = useState(1);
     const pokemonPage = 12;
-    const lastPokemon = currentPage * pokemonPage;
-    const firstPokemon = lastPokemon - pokemonPage;
+    const lastPokemon = currentPage * pokemonPage; // 1 * 12 = 12
+    const firstPokemon = lastPokemon - pokemonPage; // 12 - 12 = 0
     const currentPokemon = state.pokemons.slice(firstPokemon,lastPokemon);
 
     const paged = (page)=>{

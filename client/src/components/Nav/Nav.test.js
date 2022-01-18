@@ -7,11 +7,10 @@ import { BrowserRouter } from "react-router-dom";
 
 
 describe('<Nav />', ()=>{
-    it('renderiza un button', () => {
+    it('renderiza Crear Pokemon', () => {
         render(<Provider store={store}><BrowserRouter><Nav/></BrowserRouter></Provider>)
         const text = screen.getByText('Crear Pokemon');
         expect(text).toBeInTheDocument();
     })
-    
     
 })
