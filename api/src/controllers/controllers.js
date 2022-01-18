@@ -5,12 +5,12 @@ let apiPokemon = async () => {
     try {
       let info = [];
       for (let i = 1; i <= 40; i++) {
-        info.push(axios.get("https://pokeapi.co/api/v2/pokemon/" + i)); //hace el await una vez por bucle
+        info.push(axios.get("https://pokeapi.co/api/v2/pokemon/" + i)); 
       }
   
-      // info.push(axios.get("https://pokeapi.co/api/v2/pokemon?limit=40"));
+      
       return await Promise.all(info).then((response) => {
-        //Espera a que todas las funciones asincronicas se
+        
         const pokemones = response.map((info) => {
           return (poke = {
             name: info.data.name,
@@ -23,7 +23,7 @@ let apiPokemon = async () => {
         return pokemones;
       });
     } catch (err) {
-      return(err);
+      console.log(err);
     }
   };
 
@@ -51,7 +51,7 @@ let apiPokemon = async () => {
                 }
             }))
     } catch (error) {
-        return error;
+        console.log(error);
     }
 }
 
@@ -82,7 +82,7 @@ const allPokemonId = async(id)=>{
                     speed: pokemonId.data.stats[5].base_stat,
                     height: pokemonId.data.height,
                     weight: pokemonId.data.weight
-        }
+            }
         return onePokemon;
         }else{
             let dbPokemonId = await Pokemon.findByPk(id, {include:{model :Type}});
@@ -99,7 +99,8 @@ const allPokemonId = async(id)=>{
                 weight: dbPokemonId.weight,
                 
             }
-       return pokemonIdDb;}
+            return pokemonIdDb;
+        }
     } catch (error) {
         return 'No se encontro Pokemon';
     }

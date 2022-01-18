@@ -8,7 +8,7 @@ router.get('/', async(req,res)=>{
     try {
         let infoPokemons = await allPokemon();
     if(name){
-        let pokemonName = await infoPokemons.filter(e => e.name.toLowerCase().includes(name.toLowerCase()));
+        let pokemonName = await infoPokemons.filter(e => e.name.toLowerCase() === name.toLowerCase());
         if(pokemonName.length === 0){
             res.status(404).send('No se encontro Pokemon');
         } 
@@ -40,17 +40,13 @@ router.get('/:id', async(req,res)=>{
 router.post('/', async (req,res)=>{
     const { name, hp, attack, defense, speed, height, weight, types } = req.body;
     
-    
-    
-    
-
     try {
         let pokemonExist = await Pokemon.findOne({
             where:{
                 name : name.toLowerCase(),
             }
         });
-        if(!name) res.json({msg:'El nombre es obligatorio'});
+        
         if(pokemonExist) return res.json({msg: 'Pokemon existente'});
     
         let newPokemon = await Pokemon.create({
