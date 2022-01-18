@@ -16,8 +16,6 @@ const PokemonDetail = () =>{
         return()=>{
             dispatch(getAllPokemons)
         }
-           
-        
         // eslint-disable-next-line
     },[])
 
