@@ -40,7 +40,7 @@ export const getType = ()=>{
                 .then((json)=>{
                     dispatch({type:GET_TYPE, payload: json});
                 })
-                .catch((error) => {console.group(error)})
+                .catch((error) => {console.log(error)})
     }
 }
 
