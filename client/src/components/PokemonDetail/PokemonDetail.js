@@ -25,7 +25,7 @@ const PokemonDetail = () =>{
 
     }
 
-    console.log(pokemon)
+    
     if(!pokemon.name){
         
         return(
