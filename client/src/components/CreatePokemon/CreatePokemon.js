@@ -68,10 +68,12 @@ const CreatePokemon = ()=>{
     
     
     function handleSelect(e){
+        
         setInput({
                 ...input,
-                types : [...input.types , e.target.value]
+                types : Array.from(new Set([...input.types , e.target.value]))
             })
+        
         if(input.name === ''  || input.hp === '' || input.attack === '' || input.defense === '' || input.height === '' || input.weight === '' || input.types.length < 0){
             setButton(true)
         }else{
@@ -81,7 +83,7 @@ const CreatePokemon = ()=>{
     }
         
         
-    console.log(button)
+    
     
 
     function handleSubmit(e){

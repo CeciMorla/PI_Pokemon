@@ -13,9 +13,9 @@ const PokemonDetail = () =>{
     
     useEffect(()=>{
         dispatch(pokemonDetail(id))
-        return()=>{
-            dispatch(getAllPokemons)
-        }
+        //return()=>{
+        //    dispatch(getAllPokemons)
+        //}
         // eslint-disable-next-line
     },[])
 

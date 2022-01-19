@@ -3,7 +3,7 @@ const {allPokemon,allPokemonId} = require('../controllers/controllers');
 const {Pokemon,Type}  = require('../db.js');
 const router = Router();
 
-router.get('/', async(req,res)=>{
+router.get('/', async(req,res,next)=>{
     const {name} = req.query;
     try {
         let infoPokemons = await allPokemon();
@@ -20,7 +20,7 @@ router.get('/', async(req,res)=>{
         
     }
     } catch (error) {
-        res.status(404).send(error);
+        next(error);
     }
     
     
