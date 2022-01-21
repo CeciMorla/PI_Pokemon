@@ -27,6 +27,8 @@ let apiPokemon = async () => {
     }
   };
 
+  
+
 
 
   const dbPokemon = async() =>{

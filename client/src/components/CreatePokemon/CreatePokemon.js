@@ -197,7 +197,7 @@ const CreatePokemon = ()=>{
                     })
                 }
                 </select>
-                {errors.types && (<p className={style.error}>{errors.types}</p>)}
+                {/*errors.types && (<p className={style.error}>{errors.types}</p>)*/}
                 <ul className={style.ul}><li className={style.li}>{input.types?.map(e => e + ' ')}</li></ul>
                 <button type='submit' className={style.buttonCreate} disabled={button}>Crear</button>
             </form>
