@@ -8,10 +8,22 @@
     padding-bottom: 24px;
 }
 
+@media only screen and (max-width: 820px) {
+    .container{
+        height: 1180px;
+    }
+}
+
 
 .button{
     margin:10px;
     margin-left: -1062px;
+}
+
+@media only screen and (max-width: 820px) {
+    .button{
+        margin-left: 0px;
+    }
 }
 
 .title{
@@ -28,11 +40,28 @@
     margin-left: 519px;
 }
 
+@media only screen and (max-width: 820px) {
+    .name{
+        display: list-item;
+        justify-content: center;
+        float:none;
+        margin-left: 0px;
+    }
+}
+
+
 .inputName{
     font-family: 'Open Sans', sans-serif;
     font-style: italic;
     float:left;
     margin-left: 31px;
+}
+
+@media only screen and (max-width: 820px) {
+    .inputName{
+        float:none;
+        margin-left: -540px;
+    }
 }
 
 .hp{
@@ -43,12 +72,26 @@
     margin-top: 27px;
 }
 
+@media only screen and (max-width: 820px) {
+    .hp{
+        margin-left: 397px;
+        margin-top: 57px;
+    }
+}
+
 .inputHp{
     font-family: 'Open Sans', sans-serif;
     font-style: italic;
     float:left;
     margin-left: 69px;
     margin-top: 24px;
+}
+
+@media only screen and (max-width: 820px) {
+    .inputHp{
+        margin-left: -142px;
+        margin-top: 78px;
+    }
 }
 
 .attack{
@@ -59,12 +102,25 @@
     margin-top: 27px;
 }
 
+@media only screen and (max-width: 820px) {
+    .attack{
+        margin-left: 369px;
+    }
+}
+
 .inputAttack{
     font-family: 'Open Sans', sans-serif;
     font-style: italic;
     float:left;
     margin-left: 39px;
     margin-top: 24px;
+}
+
+@media only screen and (max-width: 820px) {
+    .inputAttack{
+        margin-left: -146px;
+        margin-top: 49px;
+    }
 }
 
 .defense{
@@ -75,12 +131,25 @@
     margin-top: 27px;
 }
 
+@media only screen and (max-width: 820px) {
+    .defense{
+        margin-left: 362px;
+    }
+}
+
 .inputDefense{
     font-family: 'Open Sans', sans-serif;
     font-style: italic;
     float:left;
     margin-left: 32px; 
     margin-top: 24px;
+}
+
+@media only screen and (max-width: 820px) {
+    .inputDefense{
+        margin-left: -143px;
+        margin-top: 51px;
+    }
 }
 
 .speed{
@@ -91,12 +160,25 @@
     margin-top: 27px;
 }
 
+@media only screen and (max-width: 820px) {
+    .speed{
+        margin-left: 355px;
+    }
+}
+
 .inputSpeed{
     font-family: 'Open Sans', sans-serif;
     font-style: italic;
     float:left;
     margin-left: 20px; 
     margin-top: 24px;
+}
+
+@media only screen and (max-width: 820px) {
+    .inputSpeed{
+        margin-left: -146px;
+        margin-top: 50px;
+    }
 }
 
 .height{
@@ -107,12 +189,25 @@
     margin-top: 27px;
 }
 
+@media only screen and (max-width: 820px) {
+    .height{
+        margin-left: 362px;
+    }
+}
+
 .inputHeight{
     font-family: 'Open Sans', sans-serif;
     font-style: italic;
     float:left;
     margin-left: 46px; 
     margin-top: 24px;
+}
+
+@media only screen and (max-width: 820px) {
+    .inputHeight{
+        margin-left: -127px;
+        margin-top: 48px;
+    }
 }
 
 .weight{
@@ -123,6 +218,12 @@
     margin-top: 27px;
 }
 
+@media only screen and (max-width: 820px) {
+    .weight{
+        margin-left: 372px;
+    }
+}
+
 .inputWeight{
     font-family: 'Open Sans', sans-serif;
     font-style: italic;
@@ -131,20 +232,39 @@
     margin-top: 24px; 
 }
 
+@media only screen and (max-width: 820px) {
+    .inputWeight{
+        margin-left: -126px;
+        margin-top: 49px;
+    }
+}
+
 .select{
     margin-left: 519px; 
     margin-top: 27px;
     border-radius: 10px;
     background-color: white;
     width: 328px;
-    margin-left: 428px;
     float: left;
     height: 28px;
     margin-left: 520px;
 }
 
+@media only screen and (max-width: 820px) {
+    .select{
+        margin-left: 230px;
+    }
+}
+
 .buttonCreate{
     margin-left: 773px;
+}
+
+@media only screen and (max-width: 820px) {
+    .buttonCreate{
+        margin-left: 515px;
+        margin-top: 51px;
+    }
 }
 
 .ul{
