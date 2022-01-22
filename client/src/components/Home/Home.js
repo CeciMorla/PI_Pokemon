@@ -16,7 +16,7 @@ const Home = () =>{
     const types = useSelector((state) => state.types);
     //const pokemons = useSelector((state)=> state.pokemons);
     const state = useSelector((state) => state)
-    const [order,setOrder] = useState('');
+    //const [,setOrder] = useState('');
     const [currentPage,setCurrentPage] = useState(1);
     const pokemonPage = 12;
     const lastPokemon = currentPage * pokemonPage; // 1 * 12 = 12
@@ -49,7 +49,7 @@ const Home = () =>{
         e.preventDefault();
         dispatch(orderBy(e.target.value));
         setCurrentPage(1);
-        setOrder(e.target.value);
+        //setOrder(e.target.value);
     }
 
     
