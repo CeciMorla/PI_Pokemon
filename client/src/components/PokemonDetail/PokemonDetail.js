@@ -64,15 +64,17 @@ const PokemonDetail = () =>{
                             }
                         </div>
                         <div className={style.line}></div>
-                        <h3 className={style.attackI}>Attack:</h3>
-                        <h4 className={style.attackII}>-{pokemon.attack}-</h4>
-                        <h3 className={style.defenseI}>Defense:</h3><h4 className={style.defenseII}>-{pokemon.defense}-</h4>
-                        <h3 className={style.speedI}>Speed:</h3>
-                        <h4 className={style.speedII}>-{pokemon.speed}-</h4>
-                        <h3 className={style.heightI}>Height:</h3>
-                        <h4 className={style.heightII}>-{pokemon.height}-</h4>
-                        <h3 className={style.weightI}>Weight:</h3>
-                        <h4 className={style.weightII}>-{pokemon.weight}-</h4>
+                        <div className={style.estadistics}>
+                            <h3 className={style.attackI}>Attack:</h3>
+                            <h4 className={style.attackII}>-{pokemon.attack}-</h4>
+                            <h3 className={style.defenseI}>Defense:</h3><h4 className={style.defenseII}>-{pokemon.defense}-</h4>
+                            <h3 className={style.speedI}>Speed:</h3>
+                            <h4 className={style.speedII}>-{pokemon.speed}-</h4>
+                            <h3 className={style.heightI}>Height:</h3>
+                            <h4 className={style.heightII}>-{pokemon.height}-</h4>
+                            <h3 className={style.weightI}>Weight:</h3>
+                            <h4 className={style.weightII}>-{pokemon.weight}-</h4>
+                        </div>
                     </div>
                 </div>
                 

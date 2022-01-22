@@ -3,7 +3,7 @@
 
 .container{
     background-image: url('./img/background\ \(1\).jpg');
-    padding-bottom: 5px;
+    padding-bottom: 37px;
 }
 
 .button{
@@ -26,6 +26,7 @@
     border-radius: 20px;
     margin-left: 465px;
     padding: 1px;
+    margin-top: -44px;
 }
 
 .aux{
@@ -43,9 +44,9 @@
 }
 
 .img{
-    width: 65%;
+    width: 60%;
     height: inherit;
-    margin-top: 10px;
+    
 }
 
 .id{
@@ -160,4 +161,8 @@
     width: 300px;
     display: inline-flex;
     margin-bottom: 33px;
+}
+
+.estadistics{
+    margin-top: -31px;
 }
