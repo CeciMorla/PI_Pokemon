@@ -1,12 +1,14 @@
-import {GET_BY_NAME} from '../actions/constantes';
-import {GET_ALL_POKEMON} from '../actions/constantes';
-import {GET_TYPE} from '../actions/constantes';
-import {FILTER_BY_CREATED} from '../actions/constantes';
-import {ORDER_BY} from '../actions/constantes';
-import {CREATE_POKEMON} from '../actions/constantes';
-import {FILTER_BY_TYPE} from '../actions/constantes';
-import {POKEMON_DETAIL} from '../actions/constantes';
-import { CLEAN_POKEMON } from '../actions/constantes';
+import {GET_BY_NAME, 
+        GET_ALL_POKEMON, 
+        GET_TYPE, 
+        FILTER_BY_CREATED, 
+        FILTER_BY_TYPE,
+        ORDER_BY,
+        CREATE_POKEMON,
+        POKEMON_DETAIL,
+        CLEAN_POKEMON
+        } from '../actions/constantes';
+
 
 const initialState = {
     pokemons : [],
