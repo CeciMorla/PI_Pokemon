@@ -1,6 +1,6 @@
 import React, {useEffect} from "react";
 import { useDispatch, useSelector } from 'react-redux';
-import { pokemonDetail, cleanPokemon, getAllPokemons } from '../../actions/index.js';
+import { pokemonDetail, cleanPokemon } from '../../actions/index.js';
 import { Link, useParams } from "react-router-dom";
 import Loading from "../Loading/Loading.js";
 import style from './PokemonDetail.module.css';
