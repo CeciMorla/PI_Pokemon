@@ -9,9 +9,21 @@
     margin-left: 510px;
 }
 
+@media only screen and (max-width: 820px) {
+    .alert{
+        margin-left: 221px;
+    }
+}
+
 .container{
     background-size: cover;
     background-image: url('./img/background\ \(1\).jpg');
+}
+
+@media only screen and (max-width: 820px) {
+    .container{
+        height: 1180px;
+    }
 }
 
 .msg{
@@ -24,6 +36,12 @@
 .button{
     margin: 10px;
     margin-left: -960px;
+}
+
+@media only screen and (max-width: 820px) {
+    .button{
+        margin-left: 0px;
+    }
 }
 
 .aux{
