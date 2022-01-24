@@ -50,13 +50,25 @@
 
 }
 
+@media only screen and (max-width: 360px) {
+    .divCreate{
+        margin-left: 83px;
+    }
+
+}
+
 .divSelectors{
     float: left;
     margin: 16px;
     margin-left: 224px
 }
 
+@media only screen and (max-width: 360px) {
+    .divSelectors{
+        margin-left: 31px;
+    }
 
+}
 
 
 
@@ -99,6 +111,13 @@ select:hover{
 @media only screen and (max-width: 820px) {
     .searchBar{
         margin-left: 189px;
+    }
+
+}
+
+@media only screen and (max-width: 360px) {
+    .searchBar{
+        margin-left: 23px;
     }
 
 }

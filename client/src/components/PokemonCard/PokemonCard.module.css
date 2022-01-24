@@ -23,6 +23,12 @@
     }
 }
 
+@media screen and (max-width: 360px) {
+    .container{
+        width: 90%;
+    }
+}
+
 .container:hover  {
     -webkit-transform:scale(1.05);transform:scale(1.05);
 }
