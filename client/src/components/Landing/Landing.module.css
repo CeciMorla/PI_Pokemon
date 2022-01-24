@@ -12,7 +12,15 @@
         background-color: #FFCC01;
         background-image: url('./img/Landing-tablet.png');
     }
+}
 
+@media only screen and (max-width: 360px) {
+    .landing{
+        background-color: #FFCC01;
+        background-image: url('./img/Landing-mobile.png');
+        width: 134%;
+        height: 134%;
+    }
 }
 
 .btn{
@@ -35,7 +43,13 @@
         margin-top: 155px;
         margin-left: 431px;
     }
+}
 
+@media only screen and (max-width: 360) {
+    .btn{
+        margin-top: 181px;
+        margin-left: 93px;
+    }
 }
 
 .btn:hover{
