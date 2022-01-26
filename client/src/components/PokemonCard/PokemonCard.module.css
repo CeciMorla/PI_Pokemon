@@ -2,7 +2,7 @@
 
 .container{
     
-    width: 21%;
+    width: 265px;
     height: 349px;
     border-radius: 10px;
     position: relative;
@@ -15,18 +15,6 @@
     background-image: url('./img/fundo-da-textura-da-folha-de-ouro-80003060.jpg');
 
     
-}
-
-@media screen and (max-width: 820px) {
-    .container{
-        width: 32%;
-    }
-}
-
-@media screen and (max-width: 360px) {
-    .container{
-        width: 90%;
-    }
 }
 
 .container:hover  {
