@@ -7,14 +7,3 @@
     
 }
 
-@media only screen and (max-width: 820px) {
-    .container{
-        height: 1832px;
-    }
-}
-    
-@media only screen and (max-width: 360px) {
-    .container{
-        height: 100%;
-    }
-}

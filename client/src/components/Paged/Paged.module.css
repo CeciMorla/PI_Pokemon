@@ -2,24 +2,6 @@
     position: relative;
 }
 
-
-
-@media only screen and (max-width: 820px) {
-    .container{
-        margin-top: 85px;
-        margin-left: -11px;
-    }
-
-}
-
-@media only screen and (max-width: 360px) {
-    .container{
-        margin-left: -39px;
-        
-    }
-
-}
-
 .page{
     list-style: none;
     display: inline-table;
@@ -34,15 +16,16 @@
     
 }
 
-@media only screen and (max-width: 360px) {
-    .button{
-        width: 69px;
-
-    }
-
-}
-
 .button:hover{
     background-color: white;
     color: #68AE28;
+}
+
+@media screen and (max-width: 766px) {
+    .container{
+        margin-top: 16%;
+    }
+
+    
+
 }
