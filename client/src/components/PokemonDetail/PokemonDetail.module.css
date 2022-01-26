@@ -6,25 +6,14 @@
     padding-bottom: 37px;
 }
 
-@media only screen and (max-width: 820px) {
-    .container{
-        padding-bottom: 83px;
-        background-size: cover;
-    }
 
-}
 
 .button{
-    margin-top: 10px;
-    margin-left: -801px;
+    margin-top: 1%;
+    margin-left: -49%;
 }
 
-@media only screen and (max-width: 820px) {
-    .button{
-        margin-left: -673px;
-    }
 
-}
 
 .name{
     text-transform: uppercase;
@@ -39,21 +28,12 @@
     width: 384px;
     height: 624px;
     border-radius: 20px;
-    margin-left: 465px;
+    margin-left: 37%;
     padding: 1px;
     margin-top: -44px;
 }
 
-@media only screen and (max-width: 820px) {
-    .divCard{
-        
-        width: 553px;
-        height: 1062px;
-        margin-left: 140px;
-        margin-top: -8px;
-    }
 
-}
 
 .aux{
     background-image: url('./img/fondo-acuarela-amarillo_1108-97.jpg');
@@ -61,11 +41,7 @@
     height: 589px;
 }
 
-@media only screen and (max-width: 820px) {
-    .aux{
-        height: 96%;
-    }
-}
+
 
 .divImg{
     background-color: white;
@@ -75,11 +51,6 @@
     height: 290px;
 }
 
-@media only screen and (max-width: 820px) {
-    .divImg{
-        height: 431px;
-    }
-}
 
 .img{
     width: 60%;
@@ -97,11 +68,7 @@
 
 }
 
-@media only screen and (max-width: 820px) {
-    .id{
-        font-size: 36px;
-    }
-}
+
 
 .divId{
     margin-left: 10px;
@@ -109,11 +76,7 @@
     width: 346px;
 }
 
-@media only screen and (max-width: 820px) {
-    .divId{
-        width: 506px;
-    }
-}
+
 
 .divTypes{
     margin-top: -11px;
@@ -124,11 +87,7 @@
     text-transform: uppercase;
 }
 
-@media only screen and (max-width: 820px) {
-    .types{
-        font-size: 26px;
-    }
-}
+
 
 .attackI{
     margin-left: -260px;
@@ -137,11 +96,7 @@
     margin-top: -6px;
 }
 
-@media only screen and (max-width: 820px) {
-    .attackI{
-        font-size: 25px;
-    }
-}
+
 
 .attackII{
     font-family: 'Varela Round', sans-serif;
@@ -150,11 +105,7 @@
     
 }
 
-@media only screen and (max-width: 820px) {
-    .attackII{
-        margin-top: -59px;
-    }
-}
+
 
 .defenseI{
     margin-left: -253px;
@@ -163,11 +114,7 @@
     margin-top: -19px;
 }
 
-@media only screen and (max-width: 820px) {
-    .defenseI{
-        font-size: 25px;
-    }
-}
+
 
 .defenseII{
     font-family: 'Varela Round', sans-serif;
@@ -175,11 +122,7 @@
     margin-left: 262px;
 }
 
-@media only screen and (max-width: 820px) {
-    .defenseII{
-        margin-top: -60px;
-    }
-}
+
 
 .hp{
     font-family: 'Varela Round', sans-serif;
@@ -188,11 +131,7 @@
     font-weight: 700;
 }
 
-@media only screen and (max-width: 820px) {
-    .hp{
-        font-size: 21px;
-    }
-}
+
 
 .divHp{
     background-color: white;
@@ -203,11 +142,7 @@
     border-radius: 8px;
 }
 
-@media only screen and (max-width: 820px) {
-    .divHp{
-        margin-left: 444px;
-    }
-}
+
 
 .speedI{
     margin-left: -264px;
@@ -216,11 +151,7 @@
     margin-top: -16px;
 }
 
-@media only screen and (max-width: 820px) {
-    .speedI{
-        font-size: 25px;
-    }
-}
+
 
 .speedII{
     font-family: 'Varela Round', sans-serif;
@@ -228,11 +159,7 @@
     margin-left: 262px;
 }
 
-@media only screen and (max-width: 820px) {
-    .speedII{
-        margin-top: -60px;
-    }
-}
+
 
 .heightI{
     margin-left: -263px;
@@ -241,11 +168,7 @@
     margin-top: -15px;
 }
 
-@media only screen and (max-width: 820px) {
-    .heightI{
-        font-size: 25px;
-    }
-}
+
 
 .heightII{
     font-family: 'Varela Round', sans-serif;
@@ -253,11 +176,7 @@
     margin-left: 262px;
 }
 
-@media only screen and (max-width: 820px) {
-    .heightII{
-        margin-top: -60px;
-    }
-}
+
 
 .weightI{
     margin-left: -260px;
@@ -266,11 +185,7 @@
     margin-top: -13px;
 }
 
-@media only screen and (max-width: 820px) {
-    .weightI{
-        font-size: 25px;
-    }
-}
+
 
 .weightII{
     font-family: 'Varela Round', sans-serif;
@@ -278,11 +193,7 @@
     margin-left: 262px;
 }
 
-@media only screen and (max-width: 820px) {
-    .weightII{
-        margin-top: -60px;
-    }
-}
+
 
 .line{
     border-bottom: black solid 1px;
@@ -291,20 +202,30 @@
     margin-bottom: 33px;
 }
 
-@media only screen and (max-width: 820px) {
-    .line{
-        width: 452px;
-        border-bottom: black solid 2px;
-        margin-top: -23px;
-    }
-}
+
 
 .estadistics{
     margin-top: -31px;
 }
 
-@media only screen and (max-width: 820px) {
-    .estadistics{
-        font-size: 31px;
+@media screen and (max-width: 650px) {
+    .divCard{
+        margin-top: 28px;
+        margin-left: 22%;
     }
+
+    .button{
+        margin-left: 5%;
+    }
+
+}
+
+@media screen and (max-width: 500px) {
+    .divCard{
+        
+        margin-left: 13%;
+    }
+
+    
+
 }
