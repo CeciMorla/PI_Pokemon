@@ -94,29 +94,33 @@ select:hover{
 
 @media screen and (max-width: 766px) {
     .divSelectors{
-        margin-left: 22.5%;
+        margin-left: 35.5%;
+        margin-top: 2%;
     }
 
     .create{
-        margin-left: 242%;
+        display: none;
     }
 
     .searchBar{
-        margin-left: 32%;
+        margin-left: 21%;
+        margin-top: 5%;
     }
 
 }
 
 @media screen and (max-width: 555px) {
     .create{
-        margin-left: 88%;
+        display: none;
     }
 
     .divSelectors{
-        margin-left: 10.5%;
+        margin-left: 17.5%;
+        margin-top: -3%;
     }
 
     .searchBar{
         margin-left: 24%;
+        margin-top: 0%;
     }
 }
